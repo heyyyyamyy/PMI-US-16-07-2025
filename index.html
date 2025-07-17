@@ -1,0 +1,1131 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Home | Project Management Institute. </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        #hero3-body {
+            font-family: "Inter", sans-serif;
+            background-color: #FAF8F2;
+            color: #1B103A;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 600;
+            color: #3b0060;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .dropdown-menu a:hover {
+            text-decoration: underline;
+            color: #3b0060;
+        }
+
+        .hero-section {
+            background: linear-gradient(90deg, #1a0a3a 0%, #1a0a3a 50%, #5a2de0 100%);
+            color: white;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image {
+            border-top-left-radius: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
+            object-fit: cover;
+            width: 288px;
+            height: 288px;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: fadeSlideIn 1s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        .hero-text {
+            max-width: 480px;
+            opacity: 0;
+            transform: translateX(50px);
+            animation: fadeSlideIn 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .btn-light {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideUp 0.8s ease forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeSlideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-register {
+            border: 2px solid #5a2de0;
+            color: #5a2de0;
+            font-weight: 600;
+        }
+
+        .btn-register:hover {
+            background-color: #5a2de0;
+            color: white;
+        }
+
+        .feedback-tab {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) rotate(90deg);
+            transform-origin: left top;
+            background-color: #e5e7eb;
+            color: #4b5563;
+            font-size: 0.75rem;
+            font-weight: 400;
+            padding: 0.25rem 0.5rem;
+            border-top-right-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem;
+            box-shadow: 0 0 6px rgb(0 0 0 / 0.1);
+            user-select: none;
+            cursor: pointer;
+            z-index: 1030;
+        }
+
+        .search-input {
+            max-width: 250px;
+        }
+
+        .card-custom {
+            border-radius: 1rem;
+            padding: 1rem;
+            color: inherit;
+            margin: 0 8px;
+            display: flex;
+            flex-direction: column;
+            height: 420px;
+            box-sizing: border-box;
+        }
+
+        .card-custom .badge-cert {
+            font-size: 8px;
+            font-weight: 600;
+            border-radius: 9999px;
+            padding: 0.15rem 0.5rem;
+            display: inline-block;
+        }
+
+        .card-custom .btn-learn {
+            font-size: 9px;
+            border-radius: 9999px;
+            padding: 0.25rem 1.25rem;
+            font-weight: 400;
+            margin-top: auto;
+            align-self: start;
+        }
+
+        .card-text-small {
+            font-size: 8px;
+            line-height: 1.1;
+        }
+
+        .card-text-small-semibold {
+            font-size: 9px;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-title-custom {
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
+        }
+
+        .btn-outline-dark-custom {
+            font-size: 10px;
+            border-radius: 9999px;
+            padding: 0.25rem 1rem;
+            border-color: #0B0B23;
+            color: #0B0B23;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .btn-outline-dark-custom:hover {
+            background-color: #0B0B23;
+            color: white;
+            border-color: #0B0B23;
+        }
+
+        .owl-nav button.owl-prev,
+        .owl-nav button.owl-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #0B0B23;
+            transition: color 0.3s;
+        }
+
+        .owl-nav button.owl-prev:hover,
+        .owl-nav button.owl-next:hover {
+            color: #4B4B57;
+        }
+
+        .owl-nav button.owl-prev {
+            left: -30px;
+        }
+
+        .owl-nav button.owl-next {
+            right: -30px;
+        }
+
+        .owl-dots {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .owl-dot {
+            display: inline-block;
+            width: 24px;
+            height: 4px;
+            border-radius: 9999px;
+            background-color: #0B0B23;
+            opacity: 0.3;
+            margin: 0 4px;
+            cursor: pointer;
+        }
+
+        .owl-dot.active {
+            opacity: 1;
+        }
+
+        /* Center the row horizontally on large screens only */
+        @media (min-width: 992px) {
+            .center-lg {
+                justify-content: center !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .card-custom {
+                width: 200px;
+            }
+        }
+
+        .membership-section {
+            border-radius: 200px;
+            background:
+                radial-gradient(ellipse at center, #4a2e9e 0%, #1b103a 60%, #1b103a 100%),
+                radial-gradient(circle at top right, #d15a0f 0%, transparent 70%),
+                radial-gradient(circle at bottom left, #0a4a5a 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .membership-divider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, #4a2e9e, #6a3fbb, #4a2e9e);
+            clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+            opacity: 0.9;
+            z-index: 1;
+        }
+
+        .membership-left,
+        .membership-right {
+            position: relative;
+            z-index: 2;
+            flex: 1 1 320px;
+            max-width: 45%;
+            color: white;
+        }
+
+        .membership-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .membership-left .logo-text {
+            font-size: 0.75rem;
+            font-weight: 600;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0;
+        }
+
+        .membership-left h1 {
+            font-weight: 600;
+            font-size: 1.75rem;
+            line-height: 1.2;
+            margin-bottom: 0;
+            max-width: 320px;
+        }
+
+        .membership-left p {
+            font-size: 0.875rem;
+            margin-bottom: 0;
+            max-width: 320px;
+        }
+
+        .btn-membership {
+            background: white;
+            color: #4a2e9e;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border-radius: 9999px;
+            padding: 0.5rem 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            transition: text-decoration 0.3s;
+        }
+
+        .btn-membership:hover {
+            text-decoration: underline;
+            color: #4a2e9e;
+            background: white;
+        }
+
+        .membership-right p {
+            font-size: 0.75rem;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .membership-right strong {
+            font-weight: 700;
+        }
+
+        @media (max-width: 991.98px) {
+
+            .membership-left,
+            .membership-right {
+                max-width: 100%;
+                flex: 1 1 100%;
+                text-align: center;
+                align-items: center;
+            }
+
+            .membership-left {
+                justify-content: center;
+            }
+
+            .membership-right p {
+                text-align: center;
+            }
+
+            .membership-divider {
+                display: none;
+            }
+        }
+
+        .headline-section {
+            max-width: 600px;
+            margin: 6rem auto 0;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .headline-section h2 {
+            font-weight: 600;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #1B103A;
+        }
+
+        .headline-section p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #6B6478;
+        }
+
+        .hover-box {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hover-box:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        #app {
+            font-family: "Open Sans", sans-serif;
+            background-color: #e6e3dc;
+            min-height: 80vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: #e6e3dc;
+            border-bottom: 1px solid #a07a56;
+            user-select: none;
+            padding: 1rem 0;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .nav-link-custom {
+            font-weight: 800;
+            font-size: 1rem;
+            color: #6b665f;
+            margin-right: 1.5rem;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .nav-link-custom:first-child,
+        .nav-link-custom:nth-child(11) {
+            color: #a7a19a;
+        }
+
+        .nav-link-highlight {
+            color: #a07a56 !important;
+            font-weight: 800;
+            white-space: nowrap;
+            margin-right: 1.5rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-link-custom span {
+            font-weight: 800;
+        }
+
+        #main-content {
+            flex-grow: 1;
+            max-width: 48rem;
+            margin: 3rem auto;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        #main-content p {
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 1.2;
+            color: #3a007a;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 576px) {
+            #main-content p {
+                font-size: 36px;
+            }
+        }
+
+        .btn-register {
+            background-color: #1a0a3a;
+            color: white;
+            font-weight: 600;
+            border-radius: 9999px;
+            padding: 0.5rem 1.5rem;
+            border: none;
+        }
+
+        .btn-register:hover,
+        .btn-register:focus {
+            background-color: #12072a;
+            color: white;
+        }
+
+        .pause-icon {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            color: #3a007a;
+            font-size: 0.75rem;
+            font-weight: 600;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .feedback-tab {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) rotate(-90deg);
+            background-color: #a7a19a;
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 0.125rem 0.25rem;
+            cursor: pointer;
+            user-select: none;
+            transform-origin: left center;
+            white-space: nowrap;
+        }
+
+        .icabs-footer-title {
+            color: #f0f72b;
+            font-weight: 800;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .icabs-footer-text {
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            letter-spacing: 0.05em;
+        }
+
+        .icabs-footer-list li {
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            list-style: none;
+        }
+
+        .icabs-footer-list li::before {
+            content: ">";
+            color: #f0f72b;
+            margin-right: 0.5rem;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        .icabs-contact-list li {
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            list-style: none;
+        }
+
+        .icabs-contact-list li i {
+            margin-right: 0.75rem;
+            font-size: 1rem;
+            vertical-align: middle;
+        }
+
+        .icabs-social-icons img {
+            width: 40px;
+            height: 40px;
+            background-color: #2f3a4a;
+            margin-right: 0.75rem;
+        }
+
+        .icabs-reach-email {
+            padding-left: 2rem;
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        #footer-body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #152536;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-dark">
+
+    <!-- Top header -->
+    <header class="border-bottom d-none d-lg-block">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <a href="#" class="d-flex align-items-center text-decoration-none header-logo-text">
+                <img src="images/PMI logo.png"
+                    alt="Project Management Institute logo with orange, purple, and blue abstract shapes" width="70"
+                    height="40" class="me-2" />
+                <div class="small lh-1">
+                    <div>Project</div>
+                    <div>Management</div>
+                    <div>Institute.</div>
+                </div>
+            </a>
+        </div>
+    </header>
+
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom bg-light">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">
+                <img src="images/PMI logo.png" alt="PMI logo" width="60" height="40" class="me-2" />
+                PMI
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold text-purple" style="color:#3b0060;">
+
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="certificationsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Certifications
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="certificationsDropdown">
+                            <li><a class="dropdown-item" href="/Certifications/PMP.html">Project Management
+                                    Professional(PMP)®</a></li>
+                            <li><a class="dropdown-item" href="Pgmp">Program Management Professional(PgMP)®</a></li>
+                            <li><a class="dropdown-item" href="MPM">Master Project Manager(MPM)®</a></li>
+                            <li><a class="dropdown-item" href="CCM">Certified Construction Manager(CCM)®</a></li>
+                            <li><a class="dropdown-item" href="CMA">Certified Management Accountant(CMA)®</a></li>
+                            <li><a class="dropdown-item" href="CISA">Certified Information Systems Auditor(CISA)®</a>
+                            </li>
+                            <li><a class="dropdown-item" href="CISM">Certified Information Security Manager(CISM)®</a>
+                            </li>
+                            <li><a class="dropdown-item" href="SixSigma">Six Sigma Certification®</a></li>
+                            <li><a class="dropdown-item" href="Scrum">Scrum Master Certification®</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="about.html">About PMI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+                <form class="d-flex border rounded overflow-hidden ms-lg-3 my-3 my-lg-0" role="search"
+                    style="max-width: 250px;">
+                    <input class="form-control border-0 search-input" type="search" placeholder="Search"
+                        aria-label="Search" />
+                    <button class="btn btn-link text-purple" type="submit" style="color:#5a2de0;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <section class="hero-section">
+        <div class="container d-flex flex-column flex-md-row align-items-center gap-4 gap-md-5 px-3 px-md-0">
+            <img src="https://storage.googleapis.com/a1aa/image/186481eb-ab4c-425a-3a28-cf478e26ec53.jpg"
+                alt="Abstract blue and teal arrow shapes on dark background with gradient"
+                class="hero-image flex-shrink-0" />
+            <div class="hero-text text-white">
+                <h1 class="display-5 fw-bold mb-3">It’s AI Appreciation Day – celebrate with us!</h1>
+                <p class="fs-5 mb-4">
+                    Join AI Community Day and delve into the latest of AI. Participate in webinars that strengthen your
+                    skills and expand your perspective on the future of AI in project management.
+                </p>
+                <a href="contact.html"
+                    class="btn btn-light rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2 fw-normal">
+                    Join Free Webinars <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid" id="hero3-body">
+        <div class="container py-5">
+            <div class="row justify-content-between align-items-start mb-4 center-lg">
+                <div class="col-md-4">
+                    <h2 class="fw-semibold" style="font-size: 24px; line-height: 1.2; max-width: 320px;">
+                        Become a
+                        <br />
+                        certified
+                        <br />
+                        success
+                    </h2>
+                </div>
+                <div class="col-md-5 text-secondary" style="font-size: 13px; max-width: 320px;">
+                    <p class="mb-2" style="font-size: 12px;">
+                        No matter what your professional goals are, we
+                        <br />
+                        have a certification to help you reach them.
+                    </p>
+                    <p class="mb-3" style="font-size: 12px;">
+                        Certifications are an excellent way to increase
+                        <br />
+                        your earning power, drive project success, and
+                        <br />
+                        stand out from the crowd.
+                    </p>
+                    <button class="btn btn-outline-dark-custom" type="button">
+                        <a style="color: white;" href="/Certifications/PMP.html">Certification®</a>
+                        <i class="fas fa-arrow-right" style="font-size: 10px;">
+                        </i>
+                    </button>
+                </div>
+            </div>
+            <div class="owl-carousel owl-theme">
+                <!-- Card 1 -->
+                <div class="card-custom"
+                    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFF1E0 100%); color: #0B0B23; border: 1px solid #0B0B23;">
+                    <div class="mb-2">
+                        <span class="badge-cert border border-dark text-dark">
+                            Certification
+                        </span>
+                    </div>
+                    <img alt="Beige pentagon with shadow on light background" class="img-fluid rounded mb-3"
+                        height="100"
+                        src="https://storage.googleapis.com/a1aa/image/0131b2f5-19e5-4482-9fc5-028f7a175904.jpg"
+                        width="180" />
+                    <h3 class="card-title-custom">
+                        PMI-ACP®
+                        <br />
+                        PMI Agile Certified
+                        <br />
+                        Practitioner (PMI-ACP)®
+                    </h3>
+                    <p class="card-text-small-semibold">
+                        2+ years of experience
+                    </p>
+                    <p class="card-text-small mb-3">
+                        This certification helps professionals
+                        <br />
+                        succeed with advanced PMO consulting
+                        <br />
+                        practices and skills.
+                    </p>
+                    <button class="btn btn-dark btn-learn" type="button">
+                        Learn More
+                    </button>
+                </div>
+                <!-- Card 2 -->
+                <div class="card-custom"
+                    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFF1E0 100%); color: #0B0B23; border: 1px solid #0B0B23;">
+                    <div class="mb-2">
+                        <span class="badge-cert border border-dark text-dark">
+                            Certification
+                        </span>
+                    </div>
+                    <img alt="Beige pentagon with shadow on light background" class="img-fluid rounded mb-3"
+                        height="100"
+                        src="https://storage.googleapis.com/a1aa/image/0131b2f5-19e5-4482-9fc5-028f7a175904.jpg"
+                        width="180" />
+                    <h3 class="card-title-custom">
+                        PMI-ACP®
+                        <br />
+                        PMI Agile Certified
+                        <br />
+                        Practitioner (PMI-ACP)®
+                    </h3>
+                    <p class="card-text-small-semibold">
+                        2+ years of experience
+                    </p>
+                    <p class="card-text-small mb-3">
+                        This certification helps professionals
+                        <br />
+                        succeed with advanced PMO consulting
+                        <br />
+                        practices and skills.
+                    </p>
+                    <button class="btn btn-dark btn-learn" type="button">
+                        Learn More
+                    </button>
+                </div>
+                <!-- Card 3 -->
+                <div class="card-custom"
+                    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFF1E0 100%); color: #0B0B23; border: 1px solid #0B0B23;">
+                    <div class="mb-2">
+                        <span class="badge-cert border border-dark text-dark">
+                            Certification
+                        </span>
+                    </div>
+                    <img alt="Beige pentagon with shadow on light background" class="img-fluid rounded mb-3"
+                        height="100"
+                        src="https://storage.googleapis.com/a1aa/image/0131b2f5-19e5-4482-9fc5-028f7a175904.jpg"
+                        width="180" />
+                    <h3 class="card-title-custom">
+                        PMI-ACP®
+                        <br />
+                        PMI Agile Certified
+                        <br />
+                        Practitioner (PMI-ACP)®
+                    </h3>
+                    <p class="card-text-small-semibold">
+                        2+ years of experience
+                    </p>
+                    <p class="card-text-small mb-3">
+                        This certification helps professionals
+                        <br />
+                        succeed with advanced PMO consulting
+                        <br />
+                        practices and skills.
+                    </p>
+                    <button class="btn btn-dark btn-learn" type="button">
+                        Learn More
+                    </button>
+                </div>
+                <!-- Card 4 -->
+                <div class="card-custom"
+                    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFF1E0 100%); color: #0B0B23; border: 1px solid #0B0B23;">
+                    <div class="mb-2">
+                        <span class="badge-cert border border-dark text-dark">
+                            Certification
+                        </span>
+                    </div>
+                    <img alt="Beige pentagon with shadow on light background" class="img-fluid rounded mb-3"
+                        height="100"
+                        src="https://storage.googleapis.com/a1aa/image/0131b2f5-19e5-4482-9fc5-028f7a175904.jpg"
+                        width="180" />
+                    <h3 class="card-title-custom">
+                        CPMAI™
+                        <br />
+                        Cognitive Project
+                        <br />
+                        Management in AI (CPMAI)™
+                    </h3>
+                    <p class="card-text-small-semibold">
+                        No experience required
+                    </p>
+                    <p class="card-text-small mb-3">
+                        The leading training and certification
+                        <br />
+                        program that equips you with the skills
+                        <br />
+                        and tools to successfully manage AI
+                        <br />
+                        projects.
+                    </p>
+                    <button class="btn btn-dark btn-learn" type="button">
+                        Learn More
+                    </button>
+                </div>
+                <!-- Card 5 -->
+                <div class="card-custom"
+                    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFF1E0 100%); color: #0B0B23; border: 1px solid #0B0B23;">
+                    <div class="mb-2">
+                        <span class="badge-cert border border-dark text-dark">
+                            Certification
+                        </span>
+                    </div>
+                    <img alt="Beige pentagon with shadow on light background" class="img-fluid rounded mb-3"
+                        height="100"
+                        src="https://storage.googleapis.com/a1aa/image/0131b2f5-19e5-4482-9fc5-028f7a175904.jpg"
+                        width="180" />
+                    <h3 class="card-title-custom">
+                        PMI-RMP®
+                        <br />
+                        PMI Risk
+                        <br />
+                        Management
+                        <br />
+                        Professional (PMI-RMP)®
+                    </h3>
+                    <p class="card-text-small-semibold">
+                        3-5 years of experience
+                    </p>
+                    <p class="card-text-small mb-3">
+                        Demonstrate your skills to spot threats
+                        <br />
+                        early, master risk management, and
+                        <br />
+                        lead projects to success.
+                    </p>
+                    <button class="btn btn-dark btn-learn" type="button">
+                        Learn More
+                    </button>
+                </div>
+                <!-- Card 6 -->
+                <div class="card-custom"
+                    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFF1E0 100%); color: #0B0B23; border: 1px solid #0B0B23;">
+                    <div class="mb-2">
+                        <span class="badge-cert border border-dark text-dark">
+                            Certification
+                        </span>
+                    </div>
+                    <img alt="Beige pentagon with shadow on light background" class="img-fluid rounded mb-3"
+                        height="100"
+                        src="https://storage.googleapis.com/a1aa/image/0131b2f5-19e5-4482-9fc5-028f7a175904.jpg"
+                        width="180" />
+                    <h3 class="card-title-custom">
+                        PMI-PMOCP™
+                        <br />
+                        PMI® PMO Certified
+                        <br />
+                        Professional (PMI-PMOCP)™
+                    </h3>
+                    <p class="card-text-small-semibold">
+                        3+ years of experience
+                    </p>
+                    <p class="card-text-small mb-3">
+                        Learn new and advanced practices to
+                        <br />
+                        set up, assess, manage and improve
+                        <br />
+                        value-oriented PMOs.
+                    </p>
+                    <button class="btn btn-dark btn-learn" type="button">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid" id="hero3-body">
+        <section class="membership-section mx-auto">
+            <div class="membership-divider"></div>
+            <div class="membership-left">
+                <div class="logo-text">
+                    <img alt="PMI Membership logo icon with purple and orange star shapes" height="25"
+                        src="images/PMI logo.png" width="30" />
+                    PMI Membership
+                </div>
+                <h1>Unlock opportunity with<br />PMI membership</h1>
+                <p>Join PMI for exclusive access to career development resources, project tools, and a global community.
+                </p>
+                <button class="btn-membership" type="button">
+                    <img alt="PMI icon with purple and orange star shapes" height="16"
+                        src="https://storage.googleapis.com/a1aa/image/6abb0bd6-2237-4212-2834-72e307505758.jpg"
+                        width="16" />
+                    <a href="about.html">Explore Membership</a>
+                </button>
+            </div>
+            <div class="membership-right">
+                <p>Boost <strong>career growth</strong> and level up your skills with free and discounted professional
+                    education and certification.</p>
+                <p>Impact <strong>project success</strong> with members-only tools, resources, and expertise.</p>
+                <p>Connect with a <strong>global community</strong> of more than 700,000 Project Professionals.</p>
+            </div>
+        </section>
+        <section class="headline-section">
+            <h2>Stay in the know and ahead of the curve</h2>
+            <p>A career in project management means being dedicated to lifelong learning. Use the resources below to
+                fuel your growth and excel within the ever-changing project landscape.</p>
+        </section>
+    </section>
+
+    <section class="container py-4">
+        <section
+            class="rounded-3 overflow-hidden d-flex flex-column flex-sm-row align-items-center justify-content-between mb-5 hover-box"
+            style="background: linear-gradient(180deg, #00121f 0%, #2a3a4a 100%);">
+            <div class="p-4 p-sm-5 flex-grow-1" style="max-width: 400px;">
+                <h1 class="text-white fw-semibold fs-3 fs-sm-2 lh-sm mb-3">Unlock free AI eLearnings</h1>
+                <h2 class="text-white fw-bold fs-5 fs-sm-4 lh-sm mb-4">Prompt like a pro and automate your project
+                    workflows with AI.</h2>
+                <button type="button" class="btn btn-light btn-sm d-inline-flex align-items-center gap-2">
+                    Explore the Courses
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="#1a0a3a"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="bi bi-arrow-right"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                </button>
+            </div>
+            <img src="https://storage.googleapis.com/a1aa/image/686d72f4-6ce9-4d1c-baf0-99ea553506e7.jpg"
+                alt="Abstract blue arrow shapes on dark gradient background" class="img-fluid"
+                style="max-width: 400px; height: 200px; object-fit: cover;" />
+        </section>
+
+        <!-- Middle Text Section -->
+        <section class="d-flex flex-column flex-sm-row justify-content-between align-items-start gap-4 mb-5">
+            <h2 class="fw-semibold fs-3 lh-sm" style="max-width: 320px;">
+                The PMI community is active where you are
+            </h2>
+            <p class="text-secondary" style="max-width: 320px;">
+                Make meaningful connections with visionary thought leaders, trend-setters, and project professionals
+                elevating our world through project success.
+            </p>
+        </section>
+
+        <!-- Bottom Banner -->
+        <section class="rounded-3 overflow-hidden d-flex flex-column flex-sm-row align-items-center justify-content-between
+            hover-box" style="background: linear-gradient(180deg, #5a1a00 0%, #d95a00 100%);">
+            <div class="p-4 p-sm-5 flex-grow-1" style="max-width: 400px;">
+                <h3 class="text-white fw-semibold fs-4 lh-sm mb-3">Check out the chapters near you</h3>
+            </div>
+            <div class="p-4 p-sm-5 flex-grow-1 text-white fs-6 lh-sm" style="max-width: 400px;">
+                <p class="mb-4">
+                    Connect with like-minded professionals who shape the future one project at a time.
+                </p>
+                <button type="button" class="btn btn-light btn-sm d-inline-flex align-items-center gap-2 text-nowrap">
+                    View Chapters
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="#5a1a00"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="bi bi-arrow-right"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                </button>
+            </div>
+            <img src="https://storage.googleapis.com/a1aa/image/452d2486-c735-46b5-11ce-37d142b11e51.jpg"
+                alt="Abstract orange circle shapes on dark orange gradient background" class="img-fluid"
+                style="max-width: 400px; height: 200px; object-fit: cover;" />
+        </section>
+    </section>
+
+    <div id="app">
+        <nav class="marquee-container">
+            <div class="marquee-content">
+                <a href="#" class="nav-link-custom">PfMP<span>®</span></a>
+                <a href="#" class="nav-link-custom">CAPM<span>®</span></a>
+                <a href="#" class="nav-link-custom">PMI-CP<span>™</span></a>
+                <a href="#" class="nav-link-custom">PMI-PMOCP<span>™</span></a>
+                <a href="#" class="nav-link-custom">PMI-ACP<span>®</span></a>
+                <a href="#" class="nav-link-custom">PMI-RMP<span>®</span></a>
+                <a href="#" class="nav-link-highlight">PMI-PBA<span>®</span></a>
+                <a href="#" class="nav-link-custom">CPMAI<span>™</span></a>
+                <a href="#" class="nav-link-custom">PMP<span>®</span></a>
+                <a href="#" class="nav-link-custom">PgMP<span>®</span></a>
+                <a href="#" class="nav-link-custom">PfMP<span>®</span></a>
+                <a href="#" class="nav-link-custom">CAPM<span>®</span></a>
+                <a href="#" class="nav-link-custom">PMI-CP<span>™</span></a>
+            </div>
+        </nav>
+
+        <div id="main-content">
+            <p>
+                Start learning for free.<br />
+                Sign up for a free PMI account to unlock dozens of free online courses, digital tools, virtual events,
+                and thought leadership insights to accelerate your career.
+            </p>
+            <button class="btn-register"> <a style="color: white; text-decoration: none;" href="contact.html">Register
+                    Now</a></button>
+        </div>
+
+
+
+        <div class="feedback-tab" role="button" tabindex="0">
+            Feedback
+        </div>
+    </div>
+
+
+    <footer class="py-5 px-3 px-md-5" id="footer-body">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h3 class="icabs-footer-title">ABOUT US</h3>
+                    <p class="icabs-footer-text">
+                        PMI is a global organization that offers project management certifications, guidelines, and
+                        resources. It helps professionals manage projects effectively using standard practices like the
+                        PMBOK® Guide.
+
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h3 class="icabs-footer-title">Certification®</h3>
+                    <ul class="icabs-footer-list p-0 m-0">
+                        <li>******</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h3 class="icabs-footer-title">LOCATION</h3>
+                    <ul class="icabs-contact-list p-0 m-0">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            105 WeWork, 1st Floor, Oberoi Commerz II, International Business Park,
+                            Oberoi Garden City, Off Western Express Highway, Goregaon East,
+                            Mumbai, 400063. Maharashtra, India
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h3 class="icabs-footer-title">CONTACT US </h3>
+                    <ul class="icabs-contact-list p-0 m-0">
+                        <li>
+                            <i class="fas fa-phone-alt"></i>+91-<strong>8035210109</strong>
+                        </li>
+
+                    </ul>
+                    <a href="" style="color: white; text-decoration: none;">contact@pmiindia.org</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Feedback tab on left side -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: false,
+                margin: 16,
+                nav: true,
+                dots: true,
+                navText: [
+                    '<i class="fas fa-arrow-left"></i>',
+                    '<i class="fas fa-arrow-right"></i>'
+                ],
+                responsive: {
+                    0: {
+                        items: 1.3,
+                        margin: 12
+                    },
+                    576: {
+                        items: 2.3
+                    },
+                    768: {
+                        items: 3.5
+                    },
+                    992: {
+                        items: 5
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,589 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>PMP | Project Management Institute. </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        rel="stylesheet" />
+    <style>
+        /*
+        Nav bar
+        */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        #hero3-body {
+            font-family: "Inter", sans-serif;
+            background-color: #FAF8F2;
+            color: #1B103A;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 600;
+            color: #3b0060;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .dropdown-menu a:hover {
+            text-decoration: underline;
+            color: #3b0060;
+        }
+
+        .hero-section {
+            background: linear-gradient(90deg, #1a0a3a 0%, #1a0a3a 50%, #5a2de0 100%);
+            color: white;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image {
+            border-top-left-radius: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
+            object-fit: cover;
+            width: 288px;
+            height: 288px;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: fadeSlideIn 1s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        .hero-text {
+            max-width: 480px;
+            opacity: 0;
+            transform: translateX(50px);
+            animation: fadeSlideIn 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .btn-light {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideUp 0.8s ease forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeSlideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-register {
+            border: 2px solid #5a2de0;
+            color: #5a2de0;
+            font-weight: 600;
+        }
+
+        .btn-register:hover {
+            background-color: #5a2de0;
+            color: white;
+        }
+
+        .feedback-tab {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) rotate(90deg);
+            transform-origin: left top;
+            background-color: #e5e7eb;
+            color: #4b5563;
+            font-size: 0.75rem;
+            font-weight: 400;
+            padding: 0.25rem 0.5rem;
+            border-top-right-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem;
+            box-shadow: 0 0 6px rgb(0 0 0 / 0.1);
+            user-select: none;
+            cursor: pointer;
+            z-index: 1030;
+        }
+
+        .search-input {
+            max-width: 250px;
+        }
+
+        /*
+        Nav bar
+        */
+
+        .pmi-nav a {
+            font-size: 13px;
+            color: #1a1a3d;
+            text-decoration: none;
+        }
+
+        .pmi-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .pmi-nav span {
+            margin: 0 0.5rem;
+            font-size: 13px;
+            color: #1a1a3d;
+        }
+
+        .pmi-image-wrapper {
+            width: 14rem;
+            height: 14rem;
+            overflow: hidden;
+            border-top-right-radius: 50% 50%;
+            border-bottom-right-radius: 50% 50%;
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .pmi-image-wrapper {
+                width: 18rem;
+                height: 18rem;
+            }
+
+            .pmi-heading {
+                font-size: 1.875rem;
+                /* 3xl */
+                line-height: 1.2;
+            }
+        }
+
+        .pmi-heading {
+            font-weight: 600;
+            font-size: 1.5rem;
+            /* 2xl */
+            line-height: 1.2;
+        }
+
+        .pmi-paragraph {
+            margin-top: 0.75rem;
+            font-size: 13px;
+            color: #4a4a6a;
+            line-height: 1.5;
+        }
+
+        .pmi-tabs {
+            border-top: 1px solid rgba(26, 26, 61, 0.125);
+            padding-top: 0.5rem;
+        }
+
+        .pmi-tabs ul {
+            max-width: 24rem;
+            margin: 0 auto;
+            border-bottom: 1px solid rgba(26, 26, 61, 0.125);
+            padding-left: 0;
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            font-size: 13px;
+            font-weight: 400;
+            color: #1a1a3d;
+        }
+
+        .pmi-tabs li {
+            padding-bottom: 0.5rem;
+            cursor: pointer;
+        }
+
+        .pmi-tabs .active-tab {
+            border-bottom: 2px solid #1a1a3d;
+            font-weight: 500;
+            color: #1a1a3d;
+        }
+
+        .pmi-tabs .inactive-tab {
+            color: #6b7280;
+            border-bottom: none;
+        }
+
+        .pmi-container {
+            max-width: 1140px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 24px;
+            padding-right: 24px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            color: #0c0c4c;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        .pmi-left-text {
+            max-width: 320px;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            font-weight: 400;
+        }
+
+        .pmi-left-heading {
+            max-width: 320px;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            font-weight: 600;
+        }
+
+        .pmi-right-text {
+            max-width: 768px;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            font-weight: 400;
+        }
+
+        .pmi-right-heading {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .pmi-image {
+            max-width: 100%;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 767.98px) {
+
+            .pmi-left-text,
+            .pmi-left-heading {
+                max-width: 100%;
+                margin-bottom: 1.5rem;
+            }
+
+            .pmi-right-text {
+                max-width: 100%;
+            }
+        }
+
+        /* footer */
+        .icabs-footer-title {
+            color: #f0f72b;
+            font-weight: 800;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .icabs-footer-text {
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            letter-spacing: 0.05em;
+        }
+
+        .icabs-footer-list li {
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            list-style: none;
+        }
+
+        .icabs-footer-list li::before {
+            content: ">";
+            color: #f0f72b;
+            margin-right: 0.5rem;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        .icabs-contact-list li {
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            list-style: none;
+        }
+
+        .icabs-contact-list li i {
+            margin-right: 0.75rem;
+            font-size: 1rem;
+            vertical-align: middle;
+        }
+
+        .icabs-social-icons img {
+            width: 40px;
+            height: 40px;
+            background-color: #2f3a4a;
+            margin-right: 0.75rem;
+        }
+
+        .icabs-reach-email {
+            padding-left: 2rem;
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        #footer-body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #152536;
+            color: white;
+        }
+
+        /* footer */
+    </style>
+</head>
+
+<body class="bg-white text-dark">
+
+    <!-- Top header -->
+    <header class="border-bottom d-none d-lg-block">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <a href="#" class="d-flex align-items-center text-decoration-none header-logo-text">
+                <img src="images/PMI logo.png"
+                    alt="Project Management Institute logo with orange, purple, and blue abstract shapes" width="70"
+                    height="40" class="me-2" />
+                <div class="small lh-1">
+                    <div>Project</div>
+                    <div>Management</div>
+                    <div>Institute.</div>
+                </div>
+            </a>
+        </div>
+    </header>
+
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom bg-light">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">
+                <img src="images/PMI logo.png" alt="PMI logo" width="60" height="40" class="me-2" />
+                PMI
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold text-purple" style="color:#3b0060;">
+
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="certificationsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Certifications
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="certificationsDropdown">
+                            <li><a class="dropdown-item" href="Certifications/PMP.html">Project Management
+                                    Professional(PMP)®</a></li>
+                            <li><a class="dropdown-item" href="Pgmp">Program Management Professional(PgMP)®</a></li>
+                            <li><a class="dropdown-item" href="MPM">Master Project Manager(MPM)®</a></li>
+                            <li><a class="dropdown-item" href="CCM">Certified Construction Manager(CCM)®</a></li>
+                            <li><a class="dropdown-item" href="CMA">Certified Management Accountant(CMA)®</a></li>
+                            <li><a class="dropdown-item" href="CISA">Certified Information Systems Auditor(CISA)®</a>
+                            </li>
+                            <li><a class="dropdown-item" href="CISM">Certified Information Security Manager(CISM)®</a>
+                            </li>
+                            <li><a class="dropdown-item" href="SixSigma">Six Sigma Certification®</a></li>
+                            <li><a class="dropdown-item" href="Scrum">Scrum Master Certification®</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="about.html">About PMI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+                <form class="d-flex border rounded overflow-hidden ms-lg-3 my-3 my-lg-0" role="search"
+                    style="max-width: 250px;">
+                    <input class="form-control border-0 search-input" type="search" placeholder="Search"
+                        aria-label="Search" />
+                    <button class="btn btn-link text-purple" type="submit" style="color:#5a2de0;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container py-5">
+        <nav class="d-flex justify-content-center align-items-center pmi-nav mb-4">
+            <a href="#">Home</a>
+            <span>/</span>
+            <a href="#">What We Do</a>
+            <span>/</span>
+            <a href="#">Our History</a>
+        </nav>
+        <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-4 justify-content-center mx-auto"
+            style="max-width: 900px;">
+            <div class="pmi-image-wrapper flex-shrink-0">
+                <img src="https://storage.googleapis.com/a1aa/image/13c561fa-3ec8-4fa4-757b-d800a31a4bbe.jpg"
+                    alt="People walking in a modern building with glass walls and stairs, shadows cast on the floor"
+                    class="img-fluid w-100 h-100 object-fit-cover" style="object-fit: cover;" width="288"
+                    height="288" />
+            </div>
+            <div class="flex-grow-1">
+                <h1 class="pmi-heading">
+                    Lighting the way for the<br />project profession since 1969
+                </h1>
+                <p class="pmi-paragraph">
+                    The Project Management Institute (PMI), is the leading authority in project management, dedicated to
+                    guiding the way to project success. Since 1969, PMI has shone a light on the power of project
+                    management and the people behind the projects. Learn more about our history and founders.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="pmi-tabs">
+        <ul>
+            <li class="active-tab">History of PMI</li>
+            <li class="inactive-tab">PMI Founders</li>
+        </ul>
+    </section>
+
+    <section class="pmi-container">
+        <div class="row gx-5 gy-4">
+            <div class="col-12 col-md-4">
+                <p class="pmi-left-text">
+                    Since the beginning, PMI has been committed to bringing people together —and on relentlessly
+                    defining, guiding and evolving the project management profession
+                </p>
+            </div>
+            <div class="col-12 col-md-8">
+                <p class="pmi-right-text">
+                    After months of conversations between Jim Snyder and his colleagues, a dinner in Philadelphia
+                    resulted in the decision that a new organization should be formed to provide a means for project
+                    managers to associate, share information and discuss common problems. This led to the first formal
+                    meeting at Georgia Institute of Technology in Atlanta, Georgia, USA, on 3 October 1969. From this
+                    meeting came the birth of Project Management Institute. Shortly thereafter, articles of
+                    incorporation were filed in Pennsylvania, signed by five persons, who are officially recognized as
+                    the founders of PMI - James Snyder, Eric Jenett, Gordon Davis, E.A. "Ned" Engman and Susan C.
+                    Gallagher.
+                </p>
+            </div>
+        </div>
+
+        <div class="row gx-5 gy-4 mt-4 mt-md-5">
+            <div class="col-12 col-md-4">
+                <p class="pmi-left-heading">
+                    1969–1979: One Giant Leap for Project Management
+                </p>
+            </div>
+            <div class="col-12 col-md-8">
+                <p class="pmi-right-heading">
+                    Apollo takes off, and so does PMI
+                </p>
+                <p class="pmi-right-text mb-4">
+                    It may be that the most lasting legacy of Apollo was human: an improved understanding of how to
+                    plan, coordinate and monitor the myriad technical activities that were the building blocks of
+                    Apollo.
+                </p>
+                <img src="https://storage.googleapis.com/a1aa/image/e0687746-365b-4d4a-eeba-f6d8f121ef82.jpg"
+                    alt="Cityscape at night with buildings lit up and their reflections in the water" class="pmi-image"
+                    width="600" height="200" />
+                <p class="pmi-right-text">
+                    While Apollo was making project history, PMI was starting to build the foundations of project
+                    management. The first PMI leaders volunteered their time because they believed in the need to share
+                    project planning and scheduling practices. In fact, the organization was almost named The American
+                    Planning and Scheduling Society. But the founders realized it was bigger than that—it was about
+                    project management. PMI was founded and held its first Seminars &amp; Symposium, “Advanced Project
+                    Management Concepts,” in Atlanta, Georgia, USA. The First PMI chapter started in Houston, TX. PMI
+                    quickly became global, holding another Seminars &amp; Symposium event in Toronto, Ontario, Canada.
+                    PMI also hired its first part-time employee, and leased office space.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="py-5 px-3 px-md-5" id="footer-body">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h3 class="icabs-footer-title">ABOUT US</h3>
+                    <p class="icabs-footer-text">
+                        PMI is a global organization that offers project management certifications, guidelines, and
+                        resources. It helps professionals manage projects effectively using standard practices like the
+                        PMBOK® Guide.
+
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h3 class="icabs-footer-title">Certification®</h3>
+                    <ul class="icabs-footer-list p-0 m-0">
+                        <li>******</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h3 class="icabs-footer-title">LOCATION</h3>
+                    <ul class="icabs-contact-list p-0 m-0">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            105 WeWork, 1st Floor, Oberoi Commerz II, International Business Park,
+                            Oberoi Garden City, Off Western Express Highway, Goregaon East,
+                            Mumbai, 400063. Maharashtra, India
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h3 class="icabs-footer-title">CONTACT US </h3>
+                    <ul class="icabs-contact-list p-0 m-0">
+                        <li>
+                            <i class="fas fa-phone-alt"></i>+91-<strong>8035210109</strong>
+                        </li>
+
+                    </ul>
+                    <a href="" style="color: white; text-decoration: none;">contact@pmiindia.org</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Feedback tab on left side -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: false,
+                margin: 16,
+                nav: true,
+                dots: true,
+                navText: [
+                    '<i class="fas fa-arrow-left"></i>',
+                    '<i class="fas fa-arrow-right"></i>'
+                ],
+                responsive: {
+                    0: {
+                        items: 1.3,
+                        margin: 12
+                    },
+                    576: {
+                        items: 2.3
+                    },
+                    768: {
+                        items: 3.5
+                    },
+                    992: {
+                        items: 5
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
