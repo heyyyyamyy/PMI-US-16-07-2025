@@ -1,0 +1,881 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>PMP | PMI </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        rel="stylesheet" />
+    <style>
+        /*
+        Nav bar
+        */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        #hero3-body {
+            font-family: "Inter", sans-serif;
+            background-color: #FAF8F2;
+            color: #1B103A;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 600;
+            color: #3b0060;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .dropdown-menu a:hover {
+            text-decoration: underline;
+            color: #3b0060;
+        }
+
+        .hero-section {
+            background: linear-gradient(90deg, #1a0a3a 0%, #1a0a3a 50%, #5a2de0 100%);
+            color: white;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image {
+            border-top-left-radius: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
+            object-fit: cover;
+            width: 288px;
+            height: 288px;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: fadeSlideIn 1s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        .hero-text {
+            max-width: 480px;
+            opacity: 0;
+            transform: translateX(50px);
+            animation: fadeSlideIn 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .btn-light {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideUp 0.8s ease forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeSlideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-register {
+            border: 2px solid #5a2de0;
+            color: #5a2de0;
+            font-weight: 600;
+        }
+
+        .btn-register:hover {
+            background-color: #5a2de0;
+            color: white;
+        }
+
+        .feedback-tab {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) rotate(90deg);
+            transform-origin: left top;
+            background-color: #e5e7eb;
+            color: #4b5563;
+            font-size: 0.75rem;
+            font-weight: 400;
+            padding: 0.25rem 0.5rem;
+            border-top-right-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem;
+            box-shadow: 0 0 6px rgb(0 0 0 / 0.1);
+            user-select: none;
+            cursor: pointer;
+            z-index: 1030;
+        }
+
+        .search-input {
+            max-width: 250px;
+        }
+
+        /*
+        Nav bar
+        */
+
+        /* Hero 1 PMP */
+        #hero1-body {
+            background-color: #92928a;
+            color: white;
+            font-family: "Inter", sans-serif;
+        }
+
+        a.unique-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        a.unique-link:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb-item.unique-breadcrumb-sep+.breadcrumb-item.unique-breadcrumb-sep::before {
+            content: "/";
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0 0.5rem;
+        }
+
+        .badge-certification-unique {
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 9999px;
+            font-size: 0.625rem;
+            font-weight: 600;
+            padding: 0.15rem 0.75rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        h1.unique-title {
+            font-weight: 700;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2.unique-subtitle {
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        p.lead-text-unique {
+            font-size: 0.875rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        hr.unique-divider {
+            border-color: rgba(255, 255, 255, 0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        .price-label-unique {
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .price-value-unique {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .btn-apply-unique {
+            background-color: white;
+            color: #16053b;
+            border-radius: 9999px;
+            padding: 0.375rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border: none;
+            white-space: nowrap;
+        }
+
+        .btn-apply-unique:hover {
+            background-color: #e5e5e5;
+            color: #16053b;
+        }
+
+        .small-text-unique {
+            font-size: 0.625rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 320px;
+            margin-bottom: 1.5rem;
+        }
+
+        .learn-more-unique {
+            font-weight: 700;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .learn-more-unique:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 992px) {
+            h1.unique-title {
+                font-size: 2rem;
+            }
+
+            h2.unique-subtitle {
+                font-size: 1.5rem;
+            }
+
+            p.lead-text-unique {
+                font-size: 1rem;
+            }
+        }
+
+        /* Hero 1 PMP */
+
+        /* Hero 2 PMP */
+        .pmp-heading {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        .pmp-text-purple {
+            color: #4a2fbd;
+        }
+
+        .pmp-underline-purple {
+            text-decoration: underline;
+            text-decoration-color: #4a2fbd;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 1.5px;
+        }
+
+        .pmp-btn-outline-purple {
+            color: #1a1a40;
+            border-color: #4a2fbd;
+        }
+
+        .pmp-btn-outline-purple:hover {
+            background-color: #4a2fbd;
+            color: white;
+            border-color: #4a2fbd;
+        }
+
+        select.pmp-form-select {
+            border-color: #4a2fbd;
+            color: #1a1a40;
+        }
+
+        select.pmp-form-select:focus {
+            box-shadow: 0 0 0 0.25rem rgba(74, 47, 189, 0.5);
+            border-color: #4a2fbd;
+        }
+
+        .pmp-hr {
+            border-color: #d9d9d9;
+        }
+
+        .pmp-list {
+            padding-left: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        .pmp-list li {
+            font-size: 13px;
+            line-height: 18px;
+        }
+
+        .pmp-text,
+        .pmp-list li {
+            font-size: 13px;
+            line-height: 18px;
+            font-weight: 400;
+        }
+
+        /* Hero 2 PMP */
+
+        /* Hero 3 PMP */
+        .pmp-container {
+            background-color: #f7f7fc;
+            min-height: 100vh;
+            padding: 3rem 1rem;
+            color: #0a0a23;
+            font-family: Arial, sans-serif;
+        }
+
+        .pmp-heading {
+            font-weight: 600;
+            font-size: 1.125rem;
+            max-width: 720px;
+            margin: 0 auto 2rem auto;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .pmp-columns {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .pmp-column {
+            border-right: 1px solid #d6d6e0;
+            padding-right: 1.5rem;
+            color: #0a0a23;
+            font-size: 0.875rem;
+            line-height: 1.25;
+            font-weight: 400;
+        }
+
+        .pmp-column:last-child {
+            border-right: none;
+            padding-right: 0;
+            padding-left: 1.5rem;
+        }
+
+        .pmp-column-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .pmp-list {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+            margin-bottom: 0;
+        }
+
+        .pmp-list>li {
+            margin-bottom: 0.75rem;
+        }
+
+        .pmp-sublist {
+            list-style-type: none;
+            padding-left: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .pmp-sublist>li {
+            margin-bottom: 0.25rem;
+        }
+
+        .pmp-link {
+            text-decoration: underline;
+            color: #0a0a23;
+            font-weight: 400;
+        }
+
+        .unique-hr {
+            border-top: 1px solid #D9D9D9;
+        }
+
+        .unique-title {
+            color: #1B1B4B;
+            font-weight: 600;
+            font-size: 1.5rem;
+            max-width: 280px;
+            line-height: 1.2;
+        }
+
+        .unique-text {
+            font-size: 0.75rem;
+            color: #1B1B4B;
+            line-height: 1.5;
+        }
+
+        .unique-list {
+            padding-left: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .unique-list li {
+            margin-bottom: 0.25rem;
+        }
+
+        .unique-button {
+            font-size: 0.625rem;
+            font-weight: 400;
+            color: #1B1B4B;
+            border: 1px solid #1B1B4B;
+            border-radius: 50rem;
+            padding: 0.375rem 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: transparent;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .unique-button:hover,
+        .unique-button:focus {
+            background-color: #1B1B4B;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .unique-icon {
+            font-size: 0.75rem;
+        }
+
+        /* footer */
+        .icabs-footer-title {
+            color: #f0f72b;
+            font-weight: 800;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .icabs-footer-text {
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            letter-spacing: 0.05em;
+        }
+
+        .icabs-footer-list li {
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            list-style: none;
+        }
+
+        .icabs-footer-list li::before {
+            content: ">";
+            color: #f0f72b;
+            margin-right: 0.5rem;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        .icabs-contact-list li {
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            list-style: none;
+        }
+
+        .icabs-contact-list li i {
+            margin-right: 0.75rem;
+            font-size: 1rem;
+            vertical-align: middle;
+        }
+
+        .icabs-social-icons img {
+            width: 40px;
+            height: 40px;
+            background-color: #2f3a4a;
+            margin-right: 0.75rem;
+        }
+
+        .icabs-reach-email {
+            padding-left: 2rem;
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        #footer-body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #152536;
+            color: white;
+        }
+
+        /* footer */
+    </style>
+</head>
+
+<body class="bg-white text-dark">
+
+    <!-- Top header -->
+    <header class="border-bottom d-none d-lg-block">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <a href="#" class="d-flex align-items-center text-decoration-none header-logo-text">
+                <img src="/images/PMI logo.png"
+                    alt="Project Management Institute logo with orange, purple, and blue abstract shapes" width="70"
+                    height="40" class="me-2" />
+                <div class="small lh-1">
+                    <div>Project</div>
+                    <div>Management</div>
+                    <div>Institute.</div>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom bg-light">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">
+                <img src="/images/PMI logo.png" alt="PMI logo" width="60" height="40" class="me-2" />
+                PMI
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold text-purple" style="color:#3b0060;">
+
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="certificationsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Certifications
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="certificationsDropdown">
+                            <li><a class="dropdown-item" href="PMP.html">Project Management Professional(PMP)®</a></li>
+                            <li><a class="dropdown-item" href="PgMP.html">Program Management Professional(PgMP)®</a>
+                            </li>
+                            <li><a class="dropdown-item" href="MPM.html">Master Project Manager(MPM)®</a>
+                            </li>
+                            <li><a class="dropdown-item" href="CCM.html">Certified Construction Manager(CCM)®</a></li>
+                            <li><a class="dropdown-item" href="CMA.html">Certified Management Accountant(CMA)®</a></li>
+                            <li><a class="dropdown-item" href="CISA.html">Certified Information Systems
+                                    Auditor(CISA)®</a>
+                            </li>
+                            <li><a class="dropdown-item" href="CISM.html">Certified Information Security
+                                    Manager(CISM)®</a>
+                            </li>
+                            <li><a class="dropdown-item" href="SixSigma.html">Six Sigma Certification®</a></li>
+                            <li><a class="dropdown-item" href="Scrum.html">Scrum Master Certification®</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About PMI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login.html">Login</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="container-fluid" id="hero1-body">
+        <section class="unique-bg-text">
+            <div class="container py-5">
+                <div aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb ps-0">
+                        <li class="breadcrumb-item unique-breadcrumb-sep"><a href="#" class="unique-link">Home</a></li>
+                        <li class="breadcrumb-item unique-breadcrumb-sep"><a href="#"
+                                class="unique-link">Certifications</a></li>
+                        <li class="breadcrumb-item active unique-breadcrumb-sep" aria-current="page"
+                            style="font-weight:700; color: white;">Certified Information Security Manager®</li>
+                    </ol>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-5 d-flex justify-content-center justify-content-lg-start mb-4 mb-lg-0">
+                        <img src="/images/mpm.webp" alt="CISM logo" class="img-fluid"
+                            style="max-width: 288px; height: auto;" width="288" height="288" />
+                    </div>
+                    <div class="col-lg-7">
+                        <span class="badge-certification-unique">Certification</span>
+                        <h1 class="unique-title" style="color: white;">Certified Information Security Manager (CISM)®
+                        </h1>
+                        <h2 class="unique-subtitle">5+ years of information security management experience</h2>
+                        <p class="lead-text-unique">
+                            The <strong>CISM</strong>® certification is a globally recognized credential for IS
+                            professionals who manage, design, oversee, and assess an enterprise’s information security.
+                            CISM demonstrates your ability to align information security strategy with broader
+                            organizational goals.
+                        </p>
+                        <p class="lead-text-unique">
+                            CISM helps you transition from a technical specialist to a strategic security leader, making
+                            you highly valuable to enterprises prioritizing effective security governance.
+                        </p>
+                        <hr class="unique-divider" />
+                        <div
+                            class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-3 gap-3">
+                            <div class="d-flex gap-5 text-sm fw-semibold">
+                                <div>
+                                    <div class="price-label-unique">Member price</div>
+                                    <div class="price-value-unique">₹44,000*</div>
+                                </div>
+                                <div>
+                                    <div class="price-label-unique">Non-member price</div>
+                                    <div class="price-value-unique">₹61,000*</div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-apply-unique">Apply Now</button>
+                        </div>
+                        <p class="small-text-unique">
+                            *Prices may vary by region and membership status.
+                        </p>
+                        <a href="#" class="learn-more-unique">
+                            Learn More About Membership
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="ms-1" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M9 18l6-6-6-6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- IS IT RIGHT FOR YOU SECTION -->
+    <section class="container py-5">
+        <div class="row gx-5 gy-4">
+            <h2 class="col-md-3 pmp-heading">Is CISM Right for You?</h2>
+            <div class="col-md-9 pmp-text">
+                The CISM certification is ideal for experienced information security managers and those who have
+                information security management responsibilities. It is a globally recognized credential that validates
+                your knowledge in managing and governing enterprise information security programs.
+            </div>
+
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <div class="d-flex flex-column flex-md-row align-items-md-center mb-3">
+                    <span class="pmp-text-purple fs-5 fw-semibold me-md-3">42%</span>
+                    <p class="mb-0 pmp-underline-purple pmp-text">
+                        Professionals holding a CISM certification earn <a href="#" class="pmp-text-purple">42% higher
+                            average salaries</a> than their non-certified peers globally.
+                    </p>
+                </div>
+                <hr class="pmp-hr" />
+                <div class="d-flex flex-column flex-md-row align-items-md-center mt-3 mb-3">
+                    <span class="pmp-text-purple fs-5 fw-semibold me-md-3">70,000+</span>
+                    <p class="mb-0 pmp-text">
+                        More than 70,000 security leaders globally have earned the CISM credential to strengthen their
+                        career path.
+                    </p>
+                </div>
+                <hr class="pmp-hr" />
+            </div>
+
+            <div class="col-md-3 d-flex align-items-center pmp-text">
+                Handbook & Requirements
+            </div>
+            <div class="col-md-9 pmp-text">
+                <p>
+                    Download the CISM Candidate Guide to understand exam details, policies, and application procedures.
+                </p>
+                <div class="d-flex gap-2">
+                    <select class="form-select w-auto pmp-form-select" aria-label="Select language">
+                        <option selected>English</option>
+                    </select>
+                    <button type="button" class="btn pmp-btn-outline-purple d-flex align-items-center gap-1">
+                        Download <i class="fas fa-download"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-3 d-flex align-items-start pmp-text">
+                About the Exam
+            </div>
+            <div class="col-md-9 pmp-text">
+                <div class="d-flex flex-column flex-md-row gap-md-5 mb-3">
+                    <div>
+                        <p class="fw-semibold mb-1">Exam Format</p>
+                        <p class="mb-0">150 multiple-choice questions</p>
+                    </div>
+                    <div>
+                        <p class="fw-semibold mb-1">Exam Time</p>
+                        <p class="mb-0">4 hours</p>
+                    </div>
+                    <div>
+                        <p class="fw-semibold mb-1">Languages</p>
+                        <p class="mb-0">English, Simplified Chinese, Japanese, Spanish, French, and more</p>
+                    </div>
+                </div>
+                <p class="pmp-text">
+                    The CISM exam focuses on four key domains: Information Security Governance, Information Risk
+                    Management, Information Security Program Development and Management, and Information Security
+                    Incident Management.
+                </p>
+            </div>
+        </div>
+        <hr class="pmp-hr mt-4" />
+    </section>
+
+    <!-- ELIGIBILITY REQUIREMENTS SECTION -->
+    <div class="pmp-container d-flex flex-column justify-content-center">
+        <p class="pmp-heading">
+            Before you apply, make sure you meet one of the following sets of CISM certification requirements:
+        </p>
+        <div class="row pmp-columns">
+            <div class="col-md-4 pmp-column">
+                <p class="pmp-column-title">Set A Requirements</p>
+                <ul class="pmp-list">
+                    <li>Five (5) or more years of professional experience in information security management within the
+                        last ten years.</li>
+                    <li>Experience must be gained across at least three of the four CISM domains.</li>
+                    <li>Adherence to ISACA’s Code of Professional Ethics and Continuing Education Policy.</li>
+                </ul>
+            </div>
+            <div class="col-md-4 pmp-column">
+                <p class="pmp-column-title">Set B Requirements</p>
+                <ul class="pmp-list">
+                    <li>Four (4) years of experience in information security management plus a bachelor’s degree (or
+                        equivalent).</li>
+                    <li>Substitutions of experience allowed based on educational achievements or other certifications
+                        (e.g., CISSP).</li>
+                    <li>Must pass the CISM exam and agree to ISACA policies.</li>
+                </ul>
+            </div>
+            <div class="col-md-4 pmp-column">
+                <p class="pmp-column-title">Set C Requirements</p>
+                <ul class="pmp-list">
+                    <li>Three (3) years of experience in information security management with a master's degree in
+                        information security or a related field.</li>
+                    <li>Education can substitute up to two years of required experience per ISACA guidelines.</li>
+                    <li>Must comply with the Code of Ethics, Continuing Education Policy, and successfully pass the
+                        exam.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAINTENANCE SECTION -->
+    <div class="container py-4">
+        <hr class="unique-hr" />
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start mt-4 gap-4">
+            <h2 class="unique-title">
+                Maintaining your CISM certification
+            </h2>
+            <div class="unique-text" style="max-width: 36rem;">
+                <p>
+                    Maintaining your CISM demonstrates your ongoing commitment to professional growth and adherence to
+                    globally recognized security practices. CISM holders are required to earn a minimum of 20 Continuing
+                    Professional Education (CPE) hours annually and 120 CPE hours over a three-year cycle.
+                </p>
+                <ul class="unique-list">
+                    <li>Attending ISACA conferences, workshops, and online programs</li>
+                    <li>Delivering presentations or workshops on cybersecurity</li>
+                    <li>Authoring articles, books, or whitepapers</li>
+                    <li>Completing approved courses or webinars</li>
+                    <li>Volunteering with ISACA chapters or industry organizations</li>
+                </ul>
+                <p>
+                    Staying certified as a CISM strengthens your professional standing and demonstrates a proactive
+                    approach to adapting in the ever-evolving cybersecurity landscape.
+                </p>
+                <a href="#" class="unique-button" role="button" aria-label="Learn More About Maintaining">
+                    <span>Learn More About Maintaining</span>
+                    <i class="fas fa-arrow-right unique-icon"></i>
+                </a>
+            </div>
+        </div>
+        <hr class="unique-hr mt-4" />
+    </div>
+
+
+
+
+
+
+    <footer class="py-5 px-3 px-md-5" id="footer-body">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h3 class="icabs-footer-title">ABOUT US</h3>
+                    <p class="icabs-footer-text">
+                        PMI is a global organization that offers project management certifications, guidelines, and
+                        resources. It helps professionals manage projects effectively using standard practices like the
+                        PMBOK® Guide.
+
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h3 class="icabs-footer-title">Certification®</h3>
+                    <ul class="icabs-footer-list p-0 m-0">
+                        <li><a href="#" style="text-decoration: none; color: inherit;">Project Management Professional
+                                (PMP)</a></li>
+                        <li><a href="#" style="text-decoration: none; color: inherit;">Program Management Professional
+                                (PgMP)</a></li>
+                        <li><a href="#" style="text-decoration: none; color: inherit;">Master Project Manager (MPM)</a>
+                        </li>
+                        <li><a href="#" style="text-decoration: none; color: inherit;">Certified Construction Manager
+                                (CCM)</a></li>
+                        <li><a href="#" style="text-decoration: none; color: inherit;">OSHA Safety Certificate</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h3 class="icabs-footer-title">LOCATION</h3>
+                    <ul class="icabs-contact-list p-0 m-0">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            105 WeWork, 1st Floor, Oberoi Commerz II, International Business Park,
+                            Oberoi Garden City, Off Western Express Highway, Goregaon East,
+                            Mumbai, 400063. Maharashtra, India
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h3 class="icabs-footer-title">CONTACT US</h3>
+                    <ul class="icabs-contact-list p-0 m-0">
+                        <li>
+                            <i class="fas fa-phone-alt"></i> +91-<strong>8035210109</strong>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contact@pmiindia.org"
+                                style="color: white; text-decoration: none;">contact@pmiindia.org</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Feedback tab on left side -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: false,
+                margin: 16,
+                nav: true,
+                dots: true,
+                navText: [
+                    '<i class="fas fa-arrow-left"></i>',
+                    '<i class="fas fa-arrow-right"></i>'
+                ],
+                responsive: {
+                    0: {
+                        items: 1.3,
+                        margin: 12
+                    },
+                    576: {
+                        items: 2.3
+                    },
+                    768: {
+                        items: 3.5
+                    },
+                    992: {
+                        items: 5
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
