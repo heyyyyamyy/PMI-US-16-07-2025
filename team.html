@@ -272,6 +272,208 @@
             }
         }
 
+        body.join-team-body {
+            background-color: #faf6f0;
+            color: #1b1330;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        .join-team-clip-shape {
+            clip-path: ellipse(50% 100% at 0% 50%);
+            overflow: hidden;
+            max-width: 420px;
+            width: 100%;
+        }
+
+        .join-team-clip-shape img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        .join-team-btn-apply {
+            background-color: #1b1330;
+            color: white;
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .join-team-btn-apply:hover {
+            background-color: #2a214a;
+            color: white;
+            text-decoration: none;
+        }
+
+        .join-team-btn-apply i {
+            margin-left: 0.5rem;
+        }
+
+        .join-team-feedback-btn {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+            transform-origin: left;
+            background-color: #d3cec7;
+            color: #1b1330;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.25rem 0.5rem;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .join-team-section {
+            background-color: white;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .join-team-member img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .join-team-member-name {
+            margin-top: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            color: #1b1330;
+        }
+
+        .join-team-member-designation {
+            font-size: 0.875rem;
+            color: #5a516d;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .join-team-main-content {
+                display: flex;
+                align-items: flex-start;
+                gap: 5rem;
+                padding-left: 5rem;
+                padding-right: 5rem;
+                padding-top: 2.5rem;
+                padding-bottom: 2.5rem;
+            }
+
+            .join-team-clip-shape {
+                max-width: 420px;
+                flex-shrink: 0;
+            }
+
+            .join-team-text-content {
+                max-width: 480px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .join-team-main-content {
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
+                padding-top: 2.5rem;
+                padding-bottom: 2.5rem;
+            }
+        }
+
+        .pmi-container {
+            max-width: 1140px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 24px;
+            padding-right: 24px;
+            padding-top: 48px;
+            padding-bottom: 48px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .pmi-container {
+                flex-direction: row;
+                gap: 6rem;
+            }
+        }
+
+        .pmi-title {
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 1.2;
+            color: #1B1035;
+            flex-shrink: 0;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .pmi-title {
+                width: 33.3333%;
+                margin-bottom: 0;
+            }
+        }
+
+        .pmi-content {
+            width: 100%;
+            color: #1B1035;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        @media (min-width: 768px) {
+            .pmi-content {
+                width: 66.6667%;
+            }
+        }
+
+        .pmi-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .pmi-list {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+            margin-bottom: 0;
+        }
+
+        .pmi-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .pmi-feedback {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+            transform-origin: left;
+            background-color: #D9D3C4;
+            color: #1B1035;
+            font-size: 0.75rem;
+            font-weight: 400;
+            padding: 0.75rem 0.5rem;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            z-index: 1000;
+        }
+
+
+
         /* footer */
         .icabs-footer-title {
             color: #f0f72b;
@@ -426,95 +628,102 @@
         </div>
     </nav>
 
-    <section class="container py-5">
-        <nav class="d-flex justify-content-center align-items-center pmi-nav mb-4">
-            <a href="#">Home</a>
-            <span>/</span>
-            <a href="#">What We Do</a>
-            <span>/</span>
-            <a href="#">Our History</a>
-        </nav>
-        <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-4 justify-content-center mx-auto"
-            style="max-width: 900px;">
-            <div class="pmi-image-wrapper flex-shrink-0">
-                <img src="https://storage.googleapis.com/a1aa/image/13c561fa-3ec8-4fa4-757b-d800a31a4bbe.jpg"
-                    alt="People walking in a modern building with glass walls and stairs, shadows cast on the floor"
-                    class="img-fluid w-100 h-100 object-fit-cover" style="object-fit: cover;" width="288"
-                    height="288" />
+    <section class="join-team-body">
+        <div class="d-flex align-items-center px-4 py-3" style="font-size: 0.875rem; font-weight: 500;">
+            <a href="#" class="text-decoration-none text-dark me-2">Home</a>
+            <span class="me-2">/</span>
+            <a href="#" class="text-decoration-none text-dark me-2">What We Do</a>
+            <span class="me-2">/</span>
+            <a href="#" class="text-decoration-none text-dark">Join Our Team</a>
+        </div>
+        <div class="join-team-main-content">
+            <div class="join-team-clip-shape">
+                <img alt="Hands typing on laptop keyboard in office environment, blurred background with people"
+                    src="https://storage.googleapis.com/a1aa/image/c6118652-6684-43eb-17ac-9f76009d9f42.jpg" />
             </div>
-            <div class="flex-grow-1">
-                <h1 class="pmi-heading">
-                    Lighting the way for the<br />project profession since 1969
+            <div class="join-team-text-content">
+                <h1 class="display-5 fw-semibold mb-3">
+                    Love new ideas and looking to improve the world?
                 </h1>
-                <p class="pmi-paragraph">
-                    The Project Management Institute (PMI), is the leading authority in project management, dedicated to
-                    guiding the way to project success. Since 1969, PMI has shone a light on the power of project
-                    management and the people behind the projects. Learn more about our history and founders.
+                <p class="fs-5 text-secondary mb-4">
+                    Are you ready to create meaningful change? PMI just might be the right place for you.
                 </p>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="join-team-btn-apply">
+                    Apply Now
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+        <section class="join-team-section">
+            <h2 class="text-center display-6 fw-semibold mb-5 text-dark">Our Team Members</h2>
+            <div class="container">
+                <div class="row justify-content-center gx-4 gy-5">
+                    <div class="col-12 col-sm-6 col-md-3 join-team-member">
+                        <img alt="Professional CEO portrait of Vikesh Rawat, man aged 30-45, confident expression, business attire"
+                            src="images/ceo 1.jpg" />
+                        <p class="join-team-member-name">Vikesh Rawat</p>
+                        <p class="join-team-member-designation">Chief Financial Officer</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 join-team-member">
+                        <img alt="Professional CEO portrait of Anil Prakash, man aged 30-45, confident expression, business attire"
+                            src="images/ceo 2.jpg" />
+                        <p class="join-team-member-name">Rinoo Rajesh</p>
+                        <p class="join-team-member-designation">Chief Counselor</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 join-team-member">
+                        <img alt="Professional CEO portrait of Prat Willson, man aged 30-45, confident expression, business attire"
+                            src="images/CEO 4.jpg" />
+                        <p class="join-team-member-name">Prat Willson</p>
+                        <p class="join-team-member-designation">Chief Technology Officer</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 join-team-member">
+                        <img alt="Professional CEO portrait of Rishab Rao, man aged 30-45, confident expression, business attire"
+                            src="images/CEO 5.webp" />
+                        <p class="join-team-member-name">Aanchal J.</p>
+                        <p class="join-team-member-designation">Account's Manager</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section>
+        <div class="pmi-container">
+            <h1 class="pmi-title">Careers at PMI</h1>
+            <div class="pmi-content">
+                <p>
+                    As a PMI employee, you will have the opportunity to interact with colleagues and contribute to
+                    projects across the globe.
+                </p>
+                <p>
+                    You will help Project Professionals, teams and enterprises by equipping them with the tools,
+                    trainings and methodologies they need to maximize project success.
+                </p>
+                <p>
+                    We value and nurture an environment of inclusivity and diversity, and a friendly culture of
+                    communication and collaboration.
+                </p>
+                <p>
+                    We do not discriminate on the basis of race, sex, gender, national origin, religion, sexual
+                    orientation, gender identity, marital or familial status, age, ancestry, disability, genetic
+                    information or any other characteristic protected by applicable law. PMI is an equal opportunity
+                    employer, and we welcome any qualified individual to apply.
+                </p>
+                <p>
+                    In addition to offering opportunities to hone your skills and enhance career development, PMI
+                    provides an excellent total package, with compensation and benefits based upon your geographic
+                    location.
+                </p>
+                <ul class="pmi-list">
+                    <li>Competitive compensation</li>
+                    <li>Award opportunities</li>
+                    <li>Generous benefits and paid time off</li>
+                    <li>Flexible work options</li>
+                    <li>Skill development opportunities</li>
+                </ul>
             </div>
         </div>
     </section>
-    <section class="pmi-tabs">
-        <ul>
-            <li class="active-tab">History of PMI</li>
-            <li class="inactive-tab">PMI Founders</li>
-        </ul>
-    </section>
-
-    <section class="pmi-container">
-        <div class="row gx-5 gy-4">
-            <div class="col-12 col-md-4">
-                <p class="pmi-left-text">
-                    Since the beginning, PMI has been committed to bringing people together —and on relentlessly
-                    defining, guiding and evolving the project management profession
-                </p>
-            </div>
-            <div class="col-12 col-md-8">
-                <p class="pmi-right-text">
-                    After months of conversations between Jim Snyder and his colleagues, a dinner in Philadelphia
-                    resulted in the decision that a new organization should be formed to provide a means for project
-                    managers to associate, share information and discuss common problems. This led to the first formal
-                    meeting at Georgia Institute of Technology in Atlanta, Georgia, USA, on 3 October 1969. From this
-                    meeting came the birth of Project Management Institute. Shortly thereafter, articles of
-                    incorporation were filed in Pennsylvania, signed by five persons, who are officially recognized as
-                    the founders of PMI - James Snyder, Eric Jenett, Gordon Davis, E.A. "Ned" Engman and Susan C.
-                    Gallagher.
-                </p>
-            </div>
-        </div>
-
-        <div class="row gx-5 gy-4 mt-4 mt-md-5">
-            <div class="col-12 col-md-4">
-                <p class="pmi-left-heading">
-                    1969–1979: One Giant Leap for Project Management
-                </p>
-            </div>
-            <div class="col-12 col-md-8">
-                <p class="pmi-right-heading">
-                    Apollo takes off, and so does PMI
-                </p>
-                <p class="pmi-right-text mb-4">
-                    It may be that the most lasting legacy of Apollo was human: an improved understanding of how to
-                    plan, coordinate and monitor the myriad technical activities that were the building blocks of
-                    Apollo.
-                </p>
-                <img src="https://storage.googleapis.com/a1aa/image/e0687746-365b-4d4a-eeba-f6d8f121ef82.jpg"
-                    alt="Cityscape at night with buildings lit up and their reflections in the water" class="pmi-image"
-                    width="600" height="200" />
-                <p class="pmi-right-text">
-                    While Apollo was making project history, PMI was starting to build the foundations of project
-                    management. The first PMI leaders volunteered their time because they believed in the need to share
-                    project planning and scheduling practices. In fact, the organization was almost named The American
-                    Planning and Scheduling Society. But the founders realized it was bigger than that—it was about
-                    project management. PMI was founded and held its first Seminars &amp; Symposium, “Advanced Project
-                    Management Concepts,” in Atlanta, Georgia, USA. The First PMI chapter started in Houston, TX. PMI
-                    quickly became global, holding another Seminars &amp; Symposium event in Toronto, Ontario, Canada.
-                    PMI also hired its first part-time employee, and leased office space.
-                </p>
-            </div>
-        </div>
-    </section>
-
 
     <footer class="py-5 px-3 px-md-5" id="footer-body">
         <div class="container">
