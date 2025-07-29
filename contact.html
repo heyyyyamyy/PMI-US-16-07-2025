@@ -16,6 +16,9 @@
         integrity="sha512-V2Dj8v/MsyyP3cAZvbR3q1RciSZfsl0Os6h3ZKmH1vH1fYrAIeD29KLQxTUNu4fRWr1R0m8aLm2/WI8gZrgh3g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/x-icon" href="/images/PMI logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
+    <!-- JS -->
 
     <style>
         /*
@@ -442,8 +445,7 @@
                         placeholder="Enter your phone number" required />
 
                     <label class="custom-label" for="customCertification">Certification</label>
-                    <select class="custom-input" id="customCertification" name="certification" required>
-                        <option value="">Select a Certification</option>
+                    <select class="custom-input" id="customCertification" name="certification[]" multiple required>
                         <option value="PMP">Project Management Professional (PMP)</option>
                         <option value="PgMP">Program Management Professional (PgMP)</option>
                         <option value="MPM">Master Project Manager (MPM)</option>
@@ -584,45 +586,54 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
     </script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
     <!-- EmailJS SDK -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        (function () {
-            emailjs.init("tEt9JY4jalTB5kwjf"); // Replace with your EmailJS public key
-        })();
+        // Initialize Choices.js
+        document.addEventListener('DOMContentLoaded', function () {
+            const certificationSelect = document.getElementById('customCertification');
+            new Choices(certificationSelect, {
+                removeItemButton: true,
+                placeholderValue: 'Select certifications',
+                searchPlaceholderValue: 'Search certifications'
+            });
 
-        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            // Init EmailJS with your public key
+            emailjs.init('tEt9JY4jalTB5kwjf'); // Replace with your EmailJS public key
+        });
+
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // ✅ Basic Validation: check all required fields
             const form = this;
-            const name = form.name.value.trim();
-            const email = form.email.value.trim();
-            const phone = form.phone.value.trim();
-            const certification = form.certification.value;
-            const message = form.message.value.trim();
-            const termsAccepted = form.terms.checked;
 
-            if (!name || !email || !phone || !certification || !message || !termsAccepted) {
-                alert("Please fill in all fields and accept the Terms of Service.");
-                return;
-            }
+            // Collect certifications as a comma-separated string
+            const certifications = Array.from(form.customCertification.selectedOptions).map(option => option.value).join(', ');
 
-            // ✅ Optional: add better email/phone format checks if needed
+            // Create template params
+            const templateParams = {
+                name: form.customName.value,
+                email: form.customEmail.value,
+                phone: form.customPhone.value,
+                certification: certifications,
+                message: form.customMessage.value
+            };
 
-            // ✅ Send Email
-            emailjs.sendForm("service_cgerrlk", "template_ihl3qa9", form)
-                .then(function () {
-                    alert("Message sent successfully!");
+            // Send email
+            emailjs.send('service_cgerrlk', 'template_ihl3qa9', templateParams) // Replace with your values
+                .then(function (response) {
+                    alert('Form submitted successfully!');
                     form.reset();
                 }, function (error) {
-                    alert("Failed to send message. Please try again later.");
-                    console.error("EmailJS error:", error);
+                    alert('Failed to send message. Please try again.');
+                    console.error(error);
                 });
         });
     </script>
-
 
 
 
@@ -655,6 +666,17 @@
                         items: 5
                     }
                 }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const certificationSelect = document.getElementById('customCertification');
+            new Choices(certificationSelect, {
+                removeItemButton: true,
+                placeholderValue: 'Select certifications',
+                searchPlaceholderValue: 'Search certifications'
             });
         });
     </script>
