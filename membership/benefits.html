@@ -1,0 +1,733 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Contact | Project Management Institute.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        rel="stylesheet" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-V2Dj8v/MsyyP3cAZvbR3q1RciSZfsl0Os6h3ZKmH1vH1fYrAIeD29KLQxTUNu4fRWr1R0m8aLm2/WI8gZrgh3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="/images/PMI logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
+    <!-- JS -->
+
+    <style>
+        /*
+        Nav bar
+        */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        #hero3-body {
+            font-family: "Inter", sans-serif;
+            background-color: #FAF8F2;
+            color: #1B103A;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 600;
+            color: #3b0060;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .dropdown-menu a:hover {
+            text-decoration: underline;
+            color: #3b0060;
+        }
+
+        .hero-section {
+            background: linear-gradient(90deg, #1a0a3a 0%, #1a0a3a 50%, #5a2de0 100%);
+            color: white;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image {
+            border-top-left-radius: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
+            object-fit: cover;
+            width: 288px;
+            height: 288px;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: fadeSlideIn 1s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        .hero-text {
+            max-width: 480px;
+            opacity: 0;
+            transform: translateX(50px);
+            animation: fadeSlideIn 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .btn-light {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideUp 0.8s ease forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeSlideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-register {
+            border: 2px solid #5a2de0;
+            color: #5a2de0;
+            font-weight: 600;
+        }
+
+        .btn-register:hover {
+            background-color: #5a2de0;
+            color: white;
+        }
+
+        .feedback-tab {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) rotate(90deg);
+            transform-origin: left top;
+            background-color: #e5e7eb;
+            color: #4b5563;
+            font-size: 0.75rem;
+            font-weight: 400;
+            padding: 0.25rem 0.5rem;
+            border-top-right-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem;
+            box-shadow: 0 0 6px rgb(0 0 0 / 0.1);
+            user-select: none;
+            cursor: pointer;
+            z-index: 1030;
+        }
+
+        .search-input {
+            max-width: 250px;
+        }
+
+        /*
+        Nav bar
+        */
+
+        .membership-header {
+            background-color: #1491a3;
+            padding: 1.5rem 2rem;
+            color: white;
+        }
+
+        .membership-header p.chapter {
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .membership-header h1 {
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .membership-header p.breadcrumb {
+            font-weight: 600;
+            font-size: 0.75rem;
+            margin-bottom: 0;
+        }
+
+        .membership-header p.breadcrumb span {
+            font-weight: 400;
+        }
+
+        .membership-main {
+            max-width: 1140px;
+            margin: 3rem auto 4rem;
+            padding: 0 1.5rem;
+        }
+
+        .membership-main h2 {
+            font-weight: 500;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        .membership-main h2 .highlight {
+            color: #f36c21;
+        }
+
+        .membership-main p.description {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        .membership-main ul.list-unstyled {
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            padding-left: 0;
+            color: #212529;
+            font-size: 0.875rem;
+        }
+
+        .membership-main ul.list-unstyled li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .membership-main ul.list-unstyled li i {
+            color: #4c2ca9;
+            margin-right: 0.5rem;
+            margin-top: 0.15rem;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .membership-main p.footer-text {
+            font-size: 0.875rem;
+            max-width: 600px;
+            color: #212529;
+        }
+
+        .membership-cards {
+            max-width: 1140px;
+            margin: 3rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .membership-cards.d-flex {
+            gap: 1.5rem;
+        }
+
+        .membership-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+        }
+
+        .membership-card .icon {
+            color: #4c2ca9;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .membership-card h3 {
+            color: #4c2ca9;
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .membership-card p {
+            font-size: 0.875rem;
+            color: #212529;
+            margin-bottom: 0;
+            line-height: 1.3;
+            flex-grow: 1;
+        }
+
+        @media (min-width: 992px) {
+            .membership-cards {
+                display: flex;
+                gap: 1.5rem;
+            }
+
+            .membership-card {
+                flex: 1 1 0;
+                max-width: 23%;
+                height: auto !important;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .membership-cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .membership-card {
+                height: 100%;
+            }
+        }
+
+
+        /* footer */
+        .footer {
+            padding: 2rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer h5 {
+            font-weight: 800;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            font-size: 0.75rem;
+            color: #1a1334;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+            color: #1a1334;
+        }
+
+        .footer p,
+        .footer small {
+            font-size: 0.75rem;
+            margin-bottom: 0.75rem;
+            max-width: 220px;
+        }
+
+        .footer .partner-title {
+            margin-top: 1.5rem;
+            font-weight: 800;
+            font-size: 0.875rem;
+        }
+
+        .footer .social-icons a {
+            font-size: 1.125rem;
+            color: #1a1334;
+            margin-right: 1rem;
+        }
+
+        .footer .social-icons a:hover {
+            color: #4a3f87;
+        }
+
+        .footer hr {
+            border-color: #e5e5e5;
+            margin: 1rem 0;
+        }
+
+        .feedback-btn {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) rotate(90deg);
+            transform-origin: left;
+            background-color: #d3cbc0;
+            color: #1a1334;
+            font-size: 0.75rem;
+            font-weight: 400;
+            padding: 0.25rem 0.5rem;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        #footer-body {
+            font-family: "Inter", sans-serif;
+            background-color: #f7f7f9;
+            color: #1a1334;
+        }
+
+        @media (max-width: 575.98px) {
+            .footer .col-sm-auto {
+                min-width: 120px !important;
+            }
+
+            .footer p,
+            .footer a,
+            .footer small {
+                max-width: 100% !important;
+            }
+
+            .footer .social-icons a {
+                margin-right: 0.75rem;
+            }
+        }
+
+        /* footer */
+    </style>
+</head>
+
+<body class="bg-white text-dark">
+
+    <!-- Top header -->
+    <header class="border-bottom d-none d-lg-block">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <a href="#" class="d-flex align-items-center text-decoration-none header-logo-text">
+                <img src="/images/PMI logo.png"
+                    alt="Project Management Institute logo with orange, purple, and blue abstract shapes" width="70"
+                    height="40" class="me-2" />
+                <div class="small lh-1">
+                    <div>Project</div>
+                    <div>Management</div>
+                    <div>Institute.</div>
+                </div>
+            </a>
+        </div>
+    </header>
+
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom bg-light">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="#">
+                <img src="/images/PMI logo.png" alt="PMI logo" width="60" height="40" class="me-2" />
+                PMI
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold text-purple" style="color:#3b0060;">
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="certificationsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Certifications
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="certificationsDropdown">
+                            <li><a class="dropdown-item" href="/Certifications/PMP.html">Project Management
+                                    Professional(PMP)®</a></li>
+                            <li><a class="dropdown-item" href="Certifications/PgMP.html">Program Management
+                                    Professional(PgMP)®</a></li>
+                            <li><a class="dropdown-item" href="Certifications/MPM.html">Master Project Manager(MPM)®</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/Certifications/CCM.html">Certified Construction
+                                    Manager(CCM)®</a></li>
+                            <li><a class="dropdown-item" href="/Certifications/CMA.html">Certified Management
+                                    Accountant(CMA)®</a></li>
+                            <li><a class="dropdown-item" href="/Certifications/CISA.html">Certified Information Systems
+                                    Auditor(CISA)®</a></li>
+                            <li><a class="dropdown-item" href="/Certifications/CISM.html">Certified Information Security
+                                    Manager(CISM)®</a></li>
+                            <li><a class="dropdown-item" href="/Certifications/SixSigma.html">Six Sigma
+                                    Certification®</a></li>
+                            <li><a class="dropdown-item" href="/Certifications/Scrum.html">Scrum Master
+                                    Certification®</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About PMI
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="about.html">Our legacy</a></li>
+                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                        </ul>
+                    </li>
+
+
+
+                    <!-- Membership Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="membershipDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Membership
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="membershipDropdown">
+                            <li><a class="dropdown-item" href="/membership/benefits.html">Membership Overview</a></li>
+                            <li><a class="dropdown-item" href="/membership/join.html">Become a Member</a></li>
+
+                        </ul>
+                    </li>
+
+
+
+                    <!-- Volunteer Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="volunteerDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Volunteer
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="volunteerDropdown">
+                            <li><a class="dropdown-item" href="/volunteer/opportunities.html">Opportunities</a></li>
+                            <li><a class="dropdown-item" href="/volunteer/why-volunteer.html">Why Volunteer</a></li>
+                            <li><a class="dropdown-item" href="/volunteer/apply.html">Apply Now</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://exam.pmiindia.org/auth/login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="membership-header text-white">
+        <div class="container">
+
+            <div class="h1">Members Benefits</div>
+            <div class="breadcrumb">Home <span>»</span> Membership Overview</div>
+        </div>
+    </div>
+
+    <div class="membership-main">
+        <div class="text-start mx-auto">
+            <div class="h2">What is <span class="highlight">PMI Membership?</span></div>
+            <div class="description">Membership means you'll be recognised as someone who is:</div>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-long-arrow-alt-right"></i>Committed to your professional and personal development.
+                </li>
+                <li><i class="fas fa-long-arrow-alt-right"></i>Enthusiastic about good practices within the PM
+                    profession.</li>
+                <li><i class="fas fa-long-arrow-alt-right"></i>Dedicated to practicing your profession in an ethical
+                    manner.</li>
+            </ul>
+            <div class="footer-text">When you become a PMI member, you'll gain access to knowledge, networks and
+                resources that can help you to improve your work and advance your career in project management.</div>
+        </div>
+
+        <div class="membership-cards">
+            <div class="membership-card">
+                <div class="icon"><i class="fas fa-users"></i></div>
+                <div class="h3">342</div>
+                <div>Over 650,000 PMI members worldwide make the PM community smarter.</div>
+            </div>
+
+            <div class="membership-card">
+                <div class="icon"><i class="fas fa-globe"></i></div>
+                <div class="h3">300+</div>
+                <div>Build your network by joining one of over 300 PMI local Chapters around the globe.</div>
+            </div>
+
+            <div class="membership-card">
+                <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="h3">150$</div>
+                <div>Save $150 on the PMP and other PMI certification exams with membership.</div>
+            </div>
+
+            <div class="membership-card">
+                <div class="icon"><i class="fas fa-tools"></i></div>
+                <div class="h3">1,000+</div>
+                <div>Work smarter with free tools and templates that help you be more efficient and productive.</div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="footer-body">
+        <footer class="footer">
+            <div class="row gy-4">
+                <div class="col-sm-auto" style="min-width:140px;">
+                    <h5>Quick Links</h5>
+                    <a href="#">Report PDUs <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a><br />
+                    <a href="#">Online Courses</a><br />
+                    <a href="#">PMBOK® Guide</a><br />
+                    <a href="#">Webinars <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a><br />
+                    <a href="#">Events</a><br />
+                    <a href="#">Store</a>
+                </div>
+                <div class="col-sm-auto" style="min-width:220px;">
+                    <h5>Certifications</h5>
+                    <p>Project Management Professional (PMP)®</p>
+                    <p>Certified Associate in Project Management (CAPM)®</p>
+                    <p>PMI Agile Certified Practitioner (PMI-ACP)®</p>
+                    <p>Compare Certifications</p>
+                </div>
+                <div class="col-sm-auto" style="min-width:140px;">
+                    <h5>Membership</h5>
+                    <a href="#">Become a Member</a><br />
+                    <a href="#">Local Chapters</a><br />
+                    <a href="#">Membership FAQs</a>
+                </div>
+                <div class="col-sm-auto" style="min-width:220px;">
+                    <h5>Community</h5>
+                    <a href="#">Latest from the Community <i class="fas fa-external-link-alt"
+                            style="font-size:10px;"></i></a><br />
+                    <a href="#">Discussions <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a><br />
+                    <a href="#">Templates <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a><br />
+                    <a href="#">Blogs <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a><br />
+                    <a href="#">Volunteering</a>
+                    <div class="partner-title">Partner with PMI</div>
+                    <a href="#">Enterprise and Commercial Partners</a><br />
+                    <a href="#">Training Partners</a>
+                </div>
+                <div class="col-sm-auto" style="min-width:160px;">
+                    <h5>Organization</h5>
+                    <a href="#">Our Mission &amp; Vision</a><br />
+                    <a href="#">Our Purpose</a><br />
+                    <a href="#">Our Leadership</a><br />
+                    <a href="#">The PMI Blog</a><br />
+                    <a href="#">What is Project Management?</a><br />
+                    <a href="#">Who are Project Managers?</a><br />
+                    <a href="#">Press &amp; Media</a><br />
+                    <a href="#">Careers</a>
+                </div>
+                <div class="col-sm-auto d-flex flex-column" style="min-width:180px;">
+                    <h5>Support</h5>
+                    <a href="#">Contact Us</a>
+                    <a href="#" class="mb-3">Store Help</a>
+                    <img src="/images/PMI logo.png"
+                        alt="Project Management Institute logo with colorful blocks and text" width="120" height="40"
+                        class="mb-3" />
+                    <hr />
+
+                    <h5>Stay Connected</h5>
+                    <div class="social-icons d-flex">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <nav class="d-flex flex-wrap gap-3 mt-4" style="font-size:10px;">
+                <a href="#" class="text-decoration-none text-reset">Privacy</a>
+                <a href="#" class="text-decoration-none text-reset">Sitemap</a>
+                <a href="#" class="text-decoration-none text-reset">Terms of use</a>
+                <a href="#" class="text-decoration-none text-reset">Purchasing Terms</a>
+                <a href="#" class="text-decoration-none text-reset">Advertising &amp; Sponsorship</a>
+            </nav>
+            <small class="d-block mt-2" style="font-size:10px;">© 2025 Project Management Institute, Inc.</small>
+        </footer>
+    </section>
+
+    <!-- Feedback tab on left side -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize Choices.js
+        document.addEventListener('DOMContentLoaded', function () {
+            const certificationSelect = document.getElementById('customCertification');
+            new Choices(certificationSelect, {
+                removeItemButton: true,
+                placeholderValue: 'Select certifications',
+                searchPlaceholderValue: 'Search certifications'
+            });
+
+            // Init EmailJS with your public key
+            emailjs.init('tEt9JY4jalTB5kwjf'); // Replace with your EmailJS public key
+        });
+
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const form = this;
+
+            // Collect certifications as a comma-separated string
+            const certifications = Array.from(form.customCertification.selectedOptions).map(option => option.value).join(', ');
+
+            // Create template params
+            const templateParams = {
+                name: form.customName.value,
+                email: form.customEmail.value,
+                phone: form.customPhone.value,
+                certification: certifications,
+                message: form.customMessage.value
+            };
+
+            // Send email
+            emailjs.send('service_cgerrlk', 'template_ihl3qa9', templateParams) // Replace with your values
+                .then(function (response) {
+                    alert('Form submitted successfully!');
+                    form.reset();
+                }, function (error) {
+                    alert('Failed to send message. Please try again.');
+                    console.error(error);
+                });
+        });
+    </script>
+
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: false,
+                margin: 16,
+                nav: true,
+                dots: true,
+                navText: [
+                    '<i class="fas fa-arrow-left"></i>',
+                    '<i class="fas fa-arrow-right"></i>'
+                ],
+                responsive: {
+                    0: {
+                        items: 1.3,
+                        margin: 12
+                    },
+                    576: {
+                        items: 2.3
+                    },
+                    768: {
+                        items: 3.5
+                    },
+                    992: {
+                        items: 5
+                    }
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const certificationSelect = document.getElementById('customCertification');
+            new Choices(certificationSelect, {
+                removeItemButton: true,
+                placeholderValue: 'Select certifications',
+                searchPlaceholderValue: 'Search certifications'
+            });
+        });
+    </script>
+</body>
+
+</html>
