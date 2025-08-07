@@ -456,69 +456,184 @@
             font-weight: 800;
         }
 
-        #main-content {
-            flex-grow: 1;
-            max-width: 48rem;
-            margin: 3rem auto;
-            text-align: center;
-            padding: 0 1rem;
+
+        /*
+        */
+
+        .events-search-input {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            padding: 0.375rem 0.75rem;
+            color: #4b5563;
+            font-size: 0.875rem;
+            width: 100%;
+            max-width: 16rem;
         }
 
-        #main-content p {
-            font-weight: 600;
-            font-size: 32px;
-            line-height: 1.2;
-            color: #3a007a;
-            margin-bottom: 2rem;
+        .events-search-input::placeholder {
+            color: #4b5563;
         }
 
-        @media (min-width: 576px) {
-            #main-content p {
-                font-size: 36px;
-            }
-        }
-
-        .btn-register {
-            background-color: #1a0a3a;
+        .events-find-btn {
+            background-color: #f97316;
             color: white;
             font-weight: 600;
-            border-radius: 9999px;
-            padding: 0.5rem 1.5rem;
+            border-radius: 0.375rem;
+            padding: 0.5rem 1rem;
             border: none;
         }
 
-        .btn-register:hover,
-        .btn-register:focus {
-            background-color: #12072a;
+        .events-find-btn:hover {
+            background-color: #ea580c;
             color: white;
         }
 
-        .pause-icon {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            color: #3a007a;
+        .events-tab-btn {
+            background: none;
+            border: none;
+            color: black;
+            font-size: 1rem;
+            font-weight: 400;
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+        }
+
+        .events-tab-btn.active {
+            font-weight: 700;
+            border-bottom: 2px solid black;
+            padding-bottom: 0.25rem;
+        }
+
+        .events-month-year {
+            color: #5b21b6;
+            font-size: 1.5rem;
+            font-weight: 400;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .events-month-year span {
+            user-select: none;
+        }
+
+        .events-month-year i {
+            font-size: 1rem;
+        }
+
+        .events-no-upcoming {
+            background-color: #f3f4f6;
+            color: #1f2937;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .events-latest-heading {
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .events-past-event {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .events-date-block {
+            flex-shrink: 0;
+            width: 5rem;
+            text-align: center;
+            color: #111827;
+        }
+
+        .events-date-block .month {
+            text-transform: uppercase;
+            font-weight: 600;
             font-size: 0.75rem;
-            font-weight: 600;
-            user-select: none;
-            cursor: pointer;
+            letter-spacing: 0.05em;
         }
 
-        .feedback-tab {
-            position: fixed;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%) rotate(-90deg);
-            background-color: #a7a19a;
-            color: white;
-            font-size: 10px;
-            font-weight: 600;
-            padding: 0.125rem 0.25rem;
-            cursor: pointer;
-            user-select: none;
-            transform-origin: left center;
-            white-space: nowrap;
+        .events-date-block .day {
+            font-weight: 800;
+            font-size: 2rem;
+            line-height: 1;
+            margin-bottom: -0.25rem;
         }
+
+        .events-date-block .year {
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        .events-details {
+            flex: 1 1 0;
+            max-width: 60%;
+            min-width: 250px;
+            color: #111827;
+        }
+
+        .events-details p.date-text {
+            font-size: 0.875rem;
+            color: #4b5563;
+            margin-bottom: 0.25rem;
+        }
+
+        .events-details h3 {
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            color: #111827;
+        }
+
+        .events-details p.location {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #111827;
+        }
+
+        .events-details p.description {
+            font-size: 0.875rem;
+            color: #374151;
+            max-width: 40rem;
+        }
+
+        .events-image-block {
+            flex-shrink: 0;
+            width: 18rem;
+            min-width: 18rem;
+        }
+
+        .events-image-block img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.375rem;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .events-past-event {
+                flex-direction: column;
+            }
+
+            .events-details {
+                max-width: 100%;
+            }
+
+            .events-image-block {
+                width: 100%;
+                min-width: auto;
+                margin-top: 1rem;
+            }
+        }
+
 
         /* footer
         */
@@ -650,7 +765,7 @@
 
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold text-purple" style="color:#3b0060;">
-                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Events</a></li>
 
                     <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
 
@@ -730,387 +845,234 @@
     </nav>
 
 
-
-    <!-- Hero section -->
-    <section class="hero-section">
-        <div class="container d-flex flex-column flex-md-row align-items-center gap-4 gap-md-5 px-3 px-md-0">
-            <img src="https://storage.googleapis.com/a1aa/image/186481eb-ab4c-425a-3a28-cf478e26ec53.jpg"
-                alt="Abstract blue and teal arrow shapes on dark background with gradient"
-                class="hero-image flex-shrink-0" />
-            <div class="hero-text text-white">
-                <h1 class="display-5 fw-bold mb-3">It’s AI Appreciation Day – celebrate with us!</h1>
-                <p class="fs-5 mb-4">
-                    Join AI Community Day and delve into the latest of AI. Participate in webinars that strengthen your
-                    skills and expand your perspective on the future of AI in project management.
-                </p>
-                <a href="contact.html"
-                    class="btn btn-light rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2 fw-normal">
-                    Join Free Webinars <i class="fas fa-external-link-alt"></i>
-                </a>
+    <div class="container py-4">
+        <!-- Search and tabs -->
+        <div
+            class="d-flex flex-column flex-sm-row align-items-center justify-content-between border border-secondary rounded px-3 py-2 gap-3">
+            <div class="d-flex align-items-center gap-2 w-100 w-sm-auto border border-secondary rounded px-3 py-2 text-secondary"
+                style="font-size: 0.875rem;">
+                <i class="fas fa-search text-orange"></i>
+                <input type="text" placeholder="Search for events" class="events-search-input" />
+            </div>
+            <div class="d-flex align-items-center gap-3 text-black" style="font-size: 0.875rem;">
+                <button type="button" class="events-find-btn">Find Events</button>
+                <button id="listBtn" type="button" class="events-tab-btn">List</button>
+                <button id="monthBtn" type="button" class="events-tab-btn active">Month</button>
+                <button id="dayBtn" type="button" class="events-tab-btn">Day</button>
             </div>
         </div>
-    </section>
 
-    <section class="container-fluid" id="hero3-body">
-        <div class="container py-5">
-            <div class="row justify-content-between align-items-start mb-4 center-lg">
-                <div class="col-md-4">
-                    <h2 class="fw-semibold" style="font-size: 24px; line-height: 1.2; max-width: 320px;">
-                        Become a
-                        <br />
-                        certified
-                        <br />
-                        success
-                    </h2>
+        <!-- Month navigation -->
+        <div class="d-flex align-items-center gap-3 mt-4 text-secondary" style="font-size: 1.125rem;">
+            <button aria-label="Previous month" id="prevMonthBtn" class="btn btn-link p-0 text-secondary"
+                style="font-size: 1.25rem;">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="thisMonthBtn" class="btn btn-outline-secondary btn-sm px-3 py-1" style="font-size: 0.75rem;">
+                This Month
+            </button>
+            <button id="currentMonthYearBtn" class="events-month-year btn btn-link p-0 ms-2">
+                <span>August 2025</span>
+                <i class="fas fa-caret-down"></i>
+            </button>
+        </div>
+
+        <!-- No upcoming events message -->
+        <div id="noUpcoming" class="events-no-upcoming mt-4" style="display:none;">
+            There are no upcoming events.
+        </div>
+
+        <!-- Latest Past Events heading -->
+        <h2 id="latestPastEventsHeading" class="events-latest-heading">
+            Latest Past Events
+        </h2>
+
+        <!-- Past events list -->
+        <div id="pastEventsContainer">
+            <!-- Event 1 -->
+            <div class="events-past-event">
+                <div class="events-date-block">
+                    <div class="month">Jul</div>
+                    <div class="day">19</div>
+                    <div class="year">2025</div>
                 </div>
-                <div class="col-md-5 text-secondary" style="font-size: 13px; max-width: 320px;">
-                    <p class="mb-2" style="font-size: 12px;">
-                        No matter what your professional goals are, we
-                        <br />
-                        have a certification to help you reach them.
+                <div class="events-details">
+                    <p class="date-text">July 19</p>
+                    <h3>Manthan 2025</h3>
+                    <p class="location">Bhubaneswar</p>
+                    <p class="description">
+                        Organized by the PMI West Bengal Chapter (PMIWBC), this event promises to bring together project
+                        management professionals and enthusiasts for a day of insightful sessions, networking, and
+                        collaboration.
                     </p>
-                    <p class="mb-3" style="font-size: 12px;">
-                        Certifications are an excellent way to increase
-                        <br />
-                        your earning power, drive project success, and
-                        <br />
-                        stand out from the crowd.
-                    </p>
-                    <button class="btn btn-outline-dark-custom" type="button">
-                        <a style="color: white;" href="/Certifications/PMP.html">Certification®</a>
-                        <i class="fas fa-arrow-right" style="font-size: 10px;">
-                        </i>
-                    </button>
+                </div>
+                <div class="events-image-block">
+                    <img src="https://storage.googleapis.com/a1aa/image/1f874886-52b6-40f0-460c-f98dac856d45.jpg"
+                        alt="Manthan 2025 event banner with purple geometric background and white logo in center, text 19 JULY SAVE THE DATE on right side" />
                 </div>
             </div>
-            <div class="owl-carousel owl-theme">
-                <!-- Card 1 -->
-                <div class="card-custom"
-                    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFF1E0 100%); color: #0B0B23; border: 1px solid #0B0B23;">
-                    <div class="mb-2">
-                        <span class="badge-cert border border-dark text-dark">
-                            Certification
-                        </span>
-                    </div>
-                    <img alt="Beige pentagon with shadow on light background" class="img-fluid rounded mb-3"
-                        height="100"
-                        src="https://storage.googleapis.com/a1aa/image/0131b2f5-19e5-4482-9fc5-028f7a175904.jpg"
-                        width="180" />
-                    <h3 class="card-title-custom">
-                        PMI-ACP®
-                        <br />
-                        PMI Agile Certified
-                        <br />
-                        Practitioner (PMI-ACP)®
-                    </h3>
-                    <p class="card-text-small-semibold">
-                        2+ years of experience
-                    </p>
-                    <p class="card-text-small mb-3">
-                        This certification helps professionals
-                        <br />
-                        succeed with advanced PMO consulting
-                        <br />
-                        practices and skills.
-                    </p>
-                    <button class="btn btn-dark btn-learn" type="button">
-                        Learn More
-                    </button>
+
+            <!-- Event 2 -->
+            <div class="events-past-event">
+                <div class="events-date-block">
+                    <div class="month">Jun</div>
+                    <div class="day">10</div>
+                    <div class="year">2025</div>
                 </div>
-                <!-- Card 2 -->
-                <div class="card-custom"
-                    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFF1E0 100%); color: #0B0B23; border: 1px solid #0B0B23;">
-                    <div class="mb-2">
-                        <span class="badge-cert border border-dark text-dark">
-                            Certification
-                        </span>
-                    </div>
-                    <img alt="Beige pentagon with shadow on light background" class="img-fluid rounded mb-3"
-                        height="100"
-                        src="https://storage.googleapis.com/a1aa/image/0131b2f5-19e5-4482-9fc5-028f7a175904.jpg"
-                        width="180" />
-                    <h3 class="card-title-custom">
-                        PMI-ACP®
-                        <br />
-                        PMI Agile Certified
-                        <br />
-                        Practitioner (PMI-ACP)®
-                    </h3>
-                    <p class="card-text-small-semibold">
-                        2+ years of experience
+                <div class="events-details">
+                    <p class="date-text">June 10</p>
+                    <h3>Tech Innovators Summit</h3>
+                    <p class="location">San Francisco</p>
+                    <p class="description">
+                        A gathering of leading tech minds to discuss the future of innovation, featuring keynote
+                        speakers, workshops, and networking opportunities.
                     </p>
-                    <p class="card-text-small mb-3">
-                        This certification helps professionals
-                        <br />
-                        succeed with advanced PMO consulting
-                        <br />
-                        practices and skills.
-                    </p>
-                    <button class="btn btn-dark btn-learn" type="button">
-                        Learn More
-                    </button>
                 </div>
-                <!-- Card 3 -->
-                <div class="card-custom"
-                    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFF1E0 100%); color: #0B0B23; border: 1px solid #0B0B23;">
-                    <div class="mb-2">
-                        <span class="badge-cert border border-dark text-dark">
-                            Certification
-                        </span>
-                    </div>
-                    <img alt="Beige pentagon with shadow on light background" class="img-fluid rounded mb-3"
-                        height="100"
-                        src="https://storage.googleapis.com/a1aa/image/0131b2f5-19e5-4482-9fc5-028f7a175904.jpg"
-                        width="180" />
-                    <h3 class="card-title-custom">
-                        PMI-ACP®
-                        <br />
-                        PMI Agile Certified
-                        <br />
-                        Practitioner (PMI-ACP)®
-                    </h3>
-                    <p class="card-text-small-semibold">
-                        2+ years of experience
-                    </p>
-                    <p class="card-text-small mb-3">
-                        This certification helps professionals
-                        <br />
-                        succeed with advanced PMO consulting
-                        <br />
-                        practices and skills.
-                    </p>
-                    <button class="btn btn-dark btn-learn" type="button">
-                        Learn More
-                    </button>
+                <div class="events-image-block">
+                    <img src="https://storage.googleapis.com/a1aa/image/fc8dd0b8-fa51-4d22-ace0-3edcc46a7166.jpg"
+                        alt="Tech Innovators Summit banner with blue and white abstract shapes and event title" />
                 </div>
-                <!-- Card 4 -->
-                <div class="card-custom"
-                    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFF1E0 100%); color: #0B0B23; border: 1px solid #0B0B23;">
-                    <div class="mb-2">
-                        <span class="badge-cert border border-dark text-dark">
-                            Certification
-                        </span>
-                    </div>
-                    <img alt="Beige pentagon with shadow on light background" class="img-fluid rounded mb-3"
-                        height="100"
-                        src="https://storage.googleapis.com/a1aa/image/0131b2f5-19e5-4482-9fc5-028f7a175904.jpg"
-                        width="180" />
-                    <h3 class="card-title-custom">
-                        CPMAI™
-                        <br />
-                        Cognitive Project
-                        <br />
-                        Management in AI (CPMAI)™
-                    </h3>
-                    <p class="card-text-small-semibold">
-                        No experience required
-                    </p>
-                    <p class="card-text-small mb-3">
-                        The leading training and certification
-                        <br />
-                        program that equips you with the skills
-                        <br />
-                        and tools to successfully manage AI
-                        <br />
-                        projects.
-                    </p>
-                    <button class="btn btn-dark btn-learn" type="button">
-                        Learn More
-                    </button>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="events-past-event">
+                <div class="events-date-block">
+                    <div class="month">May</div>
+                    <div class="day">5</div>
+                    <div class="year">2025</div>
                 </div>
-                <!-- Card 5 -->
-                <div class="card-custom"
-                    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFF1E0 100%); color: #0B0B23; border: 1px solid #0B0B23;">
-                    <div class="mb-2">
-                        <span class="badge-cert border border-dark text-dark">
-                            Certification
-                        </span>
-                    </div>
-                    <img alt="Beige pentagon with shadow on light background" class="img-fluid rounded mb-3"
-                        height="100"
-                        src="https://storage.googleapis.com/a1aa/image/0131b2f5-19e5-4482-9fc5-028f7a175904.jpg"
-                        width="180" />
-                    <h3 class="card-title-custom">
-                        PMI-RMP®
-                        <br />
-                        PMI Risk
-                        <br />
-                        Management
-                        <br />
-                        Professional (PMI-RMP)®
-                    </h3>
-                    <p class="card-text-small-semibold">
-                        3-5 years of experience
+                <div class="events-details">
+                    <p class="date-text">May 5</p>
+                    <h3>Green Energy Conference</h3>
+                    <p class="location">Berlin</p>
+                    <p class="description">
+                        Focused on sustainable energy solutions, this conference brings together experts and
+                        policymakers to discuss advancements and challenges in green technology.
                     </p>
-                    <p class="card-text-small mb-3">
-                        Demonstrate your skills to spot threats
-                        <br />
-                        early, master risk management, and
-                        <br />
-                        lead projects to success.
-                    </p>
-                    <button class="btn btn-dark btn-learn" type="button">
-                        Learn More
-                    </button>
                 </div>
-                <!-- Card 6 -->
-                <div class="card-custom"
-                    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFF1E0 100%); color: #0B0B23; border: 1px solid #0B0B23;">
-                    <div class="mb-2">
-                        <span class="badge-cert border border-dark text-dark">
-                            Certification
-                        </span>
-                    </div>
-                    <img alt="Beige pentagon with shadow on light background" class="img-fluid rounded mb-3"
-                        height="100"
-                        src="https://storage.googleapis.com/a1aa/image/0131b2f5-19e5-4482-9fc5-028f7a175904.jpg"
-                        width="180" />
-                    <h3 class="card-title-custom">
-                        PMI-PMOCP™
-                        <br />
-                        PMI® PMO Certified
-                        <br />
-                        Professional (PMI-PMOCP)™
-                    </h3>
-                    <p class="card-text-small-semibold">
-                        3+ years of experience
+                <div class="events-image-block">
+                    <img src="https://storage.googleapis.com/a1aa/image/e2cca3c7-a1f9-4922-f379-f66ddd671536.jpg"
+                        alt="Green Energy Conference banner with green leaves and earth illustration" />
+                </div>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="events-past-event">
+                <div class="events-date-block">
+                    <div class="month">Apr</div>
+                    <div class="day">22</div>
+                    <div class="year">2025</div>
+                </div>
+                <div class="events-details">
+                    <p class="date-text">April 22</p>
+                    <h3>Art &amp; Culture Fest</h3>
+                    <p class="location">New York</p>
+                    <p class="description">
+                        Celebrating diverse cultures through art, music, and performances, this festival offers a
+                        vibrant experience for all attendees.
                     </p>
-                    <p class="card-text-small mb-3">
-                        Learn new and advanced practices to
-                        <br />
-                        set up, assess, manage and improve
-                        <br />
-                        value-oriented PMOs.
+                </div>
+                <div class="events-image-block">
+                    <img src="https://storage.googleapis.com/a1aa/image/3365d136-7e3e-4bcb-6484-c1030301b814.jpg"
+                        alt="Art & Culture Fest banner with colorful abstract art and festival name" />
+                </div>
+            </div>
+
+            <!-- Event 5 -->
+            <div class="events-past-event">
+                <div class="events-date-block">
+                    <div class="month">Mar</div>
+                    <div class="day">15</div>
+                    <div class="year">2025</div>
+                </div>
+                <div class="events-details">
+                    <p class="date-text">March 15</p>
+                    <h3>Global Health Summit</h3>
+                    <p class="location">Geneva</p>
+                    <p class="description">
+                        An international forum addressing global health challenges, innovations in medicine, and public
+                        health policies.
                     </p>
-                    <button class="btn btn-dark btn-learn" type="button">
-                        Learn More
-                    </button>
+                </div>
+                <div class="events-image-block">
+                    <img src="https://storage.googleapis.com/a1aa/image/0b2426bf-1f55-482c-3c26-4e12ff13f590.jpg"
+                        alt="Global Health Summit banner with blue globe and medical icons" />
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="container-fluid" id="hero3-body">
-        <section class="membership-section mx-auto">
-            <div class="membership-divider"></div>
-            <div class="membership-left">
-                <div class="logo-text">
-                    <img alt="PMI Membership logo icon with purple and orange star shapes" height="25"
-                        src="images/PMI logo.png" width="30" />
-                    PMI Membership
-                </div>
-                <h1>Unlock opportunity with<br />PMI membership</h1>
-                <p>Join PMI for exclusive access to career development resources, project tools, and a global community.
-                </p>
-                <button class="btn-membership" type="button">
-                    <img alt="PMI icon with purple and orange star shapes" height="16"
-                        src="https://storage.googleapis.com/a1aa/image/6abb0bd6-2237-4212-2834-72e307505758.jpg"
-                        width="16" />
-                    <a href="about.html">Explore Membership</a>
-                </button>
-            </div>
-            <div class="membership-right">
-                <p>Boost <strong>career growth</strong> and level up your skills with free and discounted professional
-                    education and certification.</p>
-                <p>Impact <strong>project success</strong> with members-only tools, resources, and expertise.</p>
-                <p>Connect with a <strong>global community</strong> of more than 700,000 Project Professionals.</p>
-            </div>
-        </section>
-        <section class="headline-section">
-            <h2>Stay in the know and ahead of the curve</h2>
-            <p>A career in project management means being dedicated to lifelong learning. Use the resources below to
-                fuel your growth and excel within the ever-changing project landscape.</p>
-        </section>
-    </section>
-
-    <section class="container py-4">
-        <section
-            class="rounded-3 overflow-hidden d-flex flex-column flex-sm-row align-items-center justify-content-between mb-5 hover-box"
-            style="background: linear-gradient(180deg, #00121f 0%, #2a3a4a 100%);">
-            <div class="p-4 p-sm-5 flex-grow-1" style="max-width: 400px;">
-                <h1 class="text-white fw-semibold fs-3 fs-sm-2 lh-sm mb-3">Unlock free AI eLearnings</h1>
-                <h2 class="text-white fw-bold fs-5 fs-sm-4 lh-sm mb-4">Prompt like a pro and automate your project
-                    workflows with AI.</h2>
-                <button type="button" class="btn btn-light btn-sm d-inline-flex align-items-center gap-2">
-                    Explore the Courses
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="#1a0a3a"
-                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="bi bi-arrow-right"
-                        viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M5 12h14M13 6l6 6-6 6"></path>
-                    </svg>
-                </button>
-            </div>
-            <img src="https://storage.googleapis.com/a1aa/image/686d72f4-6ce9-4d1c-baf0-99ea553506e7.jpg"
-                alt="Abstract blue arrow shapes on dark gradient background" class="img-fluid"
-                style="max-width: 400px; height: 200px; object-fit: cover;" />
-        </section>
-
-        <!-- Middle Text Section -->
-        <section class="d-flex flex-column flex-sm-row justify-content-between align-items-start gap-4 mb-5">
-            <h2 class="fw-semibold fs-3 lh-sm" style="max-width: 320px;">
-                The PMI community is active where you are
-            </h2>
-            <p class="text-secondary" style="max-width: 320px;">
-                Make meaningful connections with visionary thought leaders, trend-setters, and project professionals
-                elevating our world through project success.
-            </p>
-        </section>
-
-        <!-- Bottom Banner -->
-        <section class="rounded-3 overflow-hidden d-flex flex-column flex-sm-row align-items-center justify-content-between
-            hover-box" style="background: linear-gradient(180deg, #5a1a00 0%, #d95a00 100%);">
-            <div class="p-4 p-sm-5 flex-grow-1" style="max-width: 400px;">
-                <h3 class="text-white fw-semibold fs-4 lh-sm mb-3">Check out the chapters near you</h3>
-            </div>
-            <div class="p-4 p-sm-5 flex-grow-1 text-white fs-6 lh-sm" style="max-width: 400px;">
-                <p class="mb-4">
-                    Connect with like-minded professionals who shape the future one project at a time.
-                </p>
-                <button type="button" class="btn btn-light btn-sm d-inline-flex align-items-center gap-2 text-nowrap">
-                    View Chapters
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="#5a1a00"
-                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="bi bi-arrow-right"
-                        viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M5 12h14M13 6l6 6-6 6"></path>
-                    </svg>
-                </button>
-            </div>
-            <img src="https://storage.googleapis.com/a1aa/image/452d2486-c735-46b5-11ce-37d142b11e51.jpg"
-                alt="Abstract orange circle shapes on dark orange gradient background" class="img-fluid"
-                style="max-width: 400px; height: 200px; object-fit: cover;" />
-        </section>
-    </section>
-
-    <div id="app">
-        <nav class="marquee-container">
-            <div class="marquee-content">
-                <a href="#" class="nav-link-custom">PfMP<span>®</span></a>
-                <a href="#" class="nav-link-custom">CAPM<span>®</span></a>
-                <a href="#" class="nav-link-custom">PMI-CP<span>™</span></a>
-                <a href="#" class="nav-link-custom">PMI-PMOCP<span>™</span></a>
-                <a href="#" class="nav-link-custom">PMI-ACP<span>®</span></a>
-                <a href="#" class="nav-link-custom">PMI-RMP<span>®</span></a>
-                <a href="#" class="nav-link-highlight">PMI-PBA<span>®</span></a>
-                <a href="#" class="nav-link-custom">CPMAI<span>™</span></a>
-                <a href="#" class="nav-link-custom">PMP<span>®</span></a>
-                <a href="#" class="nav-link-custom">PgMP<span>®</span></a>
-                <a href="#" class="nav-link-custom">PfMP<span>®</span></a>
-                <a href="#" class="nav-link-custom">CAPM<span>®</span></a>
-                <a href="#" class="nav-link-custom">PMI-CP<span>™</span></a>
-            </div>
-        </nav>
-
-        <div id="main-content">
-            <p>
-                Start learning for free.<br />
-                Sign up for a free PMI account to unlock dozens of free online courses, digital tools, virtual events,
-                and thought leadership insights to accelerate your career.
-            </p>
-            <button class="btn-register"> <a style="color: white; text-decoration: none;" href="contact.html">Register
-                    Now</a></button>
-        </div>
-
     </div>
+
+    <script>
+        const listBtn = document.getElementById('listBtn');
+        const monthBtn = document.getElementById('monthBtn');
+        const dayBtn = document.getElementById('dayBtn');
+        const noUpcoming = document.getElementById('noUpcoming');
+        const pastEventsContainer = document.getElementById('pastEventsContainer');
+        const latestPastEventsHeading = document.getElementById('latestPastEventsHeading');
+        const thisMonthBtn = document.getElementById('thisMonthBtn');
+        const currentMonthYearBtn = document.getElementById('currentMonthYearBtn').querySelector('span');
+
+        function showNoUpcoming() {
+            noUpcoming.style.display = 'block';
+            pastEventsContainer.style.display = 'none';
+            latestPastEventsHeading.style.display = 'none';
+        }
+
+        function showPastEvents() {
+            noUpcoming.style.display = 'none';
+            pastEventsContainer.style.display = 'block';
+            latestPastEventsHeading.style.display = 'block';
+        }
+
+        function setActiveButton(activeBtn) {
+            [listBtn, monthBtn, dayBtn].forEach(btn => {
+                if (btn === activeBtn) {
+                    btn.classList.add('active');
+                    btn.classList.remove('text-black');
+                } else {
+                    btn.classList.remove('active');
+                    btn.classList.add('text-black');
+                }
+            });
+        }
+
+        listBtn.addEventListener('click', () => {
+            showNoUpcoming();
+            setActiveButton(listBtn);
+        });
+
+        monthBtn.addEventListener('click', () => {
+            showPastEvents();
+            setActiveButton(monthBtn);
+        });
+
+        dayBtn.addEventListener('click', () => {
+            showNoUpcoming();
+            setActiveButton(dayBtn);
+        });
+
+        // Initialize with Month active and past events shown
+        showPastEvents();
+        setActiveButton(monthBtn);
+
+        // Set "This Month" and "August 2025" dynamically based on current date
+        function updateMonthYear() {
+            const now = new Date();
+            const monthNames = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            const monthName = monthNames[now.getMonth()];
+            const year = now.getFullYear();
+
+            thisMonthBtn.textContent = "This Month";
+            currentMonthYearBtn.textContent = `${monthName} ${year}`;
+        }
+
+        updateMonthYear();
+    </script>
+
+
 
 
     <section id="footer-body">

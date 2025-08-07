@@ -430,68 +430,97 @@
         }
 
         /* footer */
-        .icabs-footer-title {
-            color: #f0f72b;
+        .footer {
+            padding: 2rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer h5 {
             font-weight: 800;
             font-size: 0.875rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .icabs-footer-text {
-            font-weight: 400;
-            font-size: 0.875rem;
-            line-height: 1.6;
-            letter-spacing: 0.05em;
-        }
-
-        .icabs-footer-list li {
             margin-bottom: 1rem;
-            font-weight: 400;
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
-            list-style: none;
         }
 
-        .icabs-footer-list li::before {
-            content: ">";
-            color: #f0f72b;
-            margin-right: 0.5rem;
-            font-weight: 700;
+        .footer a {
             font-size: 0.75rem;
+            color: #1a1334;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-bottom: 0.5rem;
         }
 
-        .icabs-contact-list li {
-            margin-bottom: 1rem;
-            font-weight: 400;
+        .footer a:hover {
+            text-decoration: underline;
+            color: #1a1334;
+        }
+
+        .footer p,
+        .footer small {
+            font-size: 0.75rem;
+            margin-bottom: 0.75rem;
+            max-width: 220px;
+        }
+
+        .footer .partner-title {
+            margin-top: 1.5rem;
+            font-weight: 800;
             font-size: 0.875rem;
-            letter-spacing: 0.05em;
-            list-style: none;
         }
 
-        .icabs-contact-list li i {
-            margin-right: 0.75rem;
-            font-size: 1rem;
-            vertical-align: middle;
+        .footer .social-icons a {
+            font-size: 1.125rem;
+            color: #1a1334;
+            margin-right: 1rem;
         }
 
-        .icabs-social-icons img {
-            width: 40px;
-            height: 40px;
-            background-color: #2f3a4a;
-            margin-right: 0.75rem;
+        .footer .social-icons a:hover {
+            color: #4a3f87;
         }
 
-        .icabs-reach-email {
-            padding-left: 2rem;
+        .footer hr {
+            border-color: #e5e5e5;
+            margin: 1rem 0;
+        }
+
+        .feedback-btn {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) rotate(90deg);
+            transform-origin: left;
+            background-color: #d3cbc0;
+            color: #1a1334;
+            font-size: 0.75rem;
             font-weight: 400;
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
+            padding: 0.25rem 0.5rem;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
         }
 
         #footer-body {
-            font-family: "Montserrat", sans-serif;
-            background-color: #152536;
-            color: white;
+            font-family: "Inter", sans-serif;
+            background-color: #f7f7f9;
+            color: #1a1334;
+        }
+
+        @media (max-width: 575.98px) {
+            .footer .col-sm-auto {
+                min-width: 120px !important;
+            }
+
+            .footer p,
+            .footer a,
+            .footer small {
+                max-width: 100% !important;
+            }
+
+            .footer .social-icons a {
+                margin-right: 0.75rem;
+            }
         }
 
         /* footer */
@@ -520,7 +549,7 @@
     <nav class="navbar navbar-expand-lg navbar-light border-bottom bg-light">
         <div class="container">
             <a class="navbar-brand d-lg-none" href="#">
-                <img src="/images/PMI logo.png" alt="PMI logo" width="60" height="40" class="me-2" />
+                <img src="images/PMI logo.png" alt="PMI logo" width="60" height="40" class="me-2" />
                 PMI
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
@@ -530,47 +559,81 @@
 
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold text-purple" style="color:#3b0060;">
+                    <li class="nav-item"><a class="nav-link" href="/events.html">Events</a></li>
 
                     <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="certificationsDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Certifications
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="certificationsDropdown">
-                            <li><a class="dropdown-item" href="PMP.html">Project Management Professional(PMP)®</a></li>
-                            <li><a class="dropdown-item" href="PgMP.html">Program Management Professional(PgMP)®</a>
+                            <li><a class="dropdown-item" href="/Certifications/PMP.html">Project Management
+                                    Professional(PMP)®</a></li>
+                            <li><a class="dropdown-item" href="Certifications/PgMP.html">Program Management
+                                    Professional(PgMP)®</a></li>
+                            <li><a class="dropdown-item" href="Certifications/MPM.html">Master Project Manager(MPM)®</a>
                             </li>
-                            <li><a class="dropdown-item" href="MPM.html">Master Project Manager(MPM)®</a>
-                            </li>
-                            <li><a class="dropdown-item" href="CCM.html">Certified Construction Manager(CCM)®</a></li>
-                            <li><a class="dropdown-item" href="CMA.html">Certified Management Accountant(CMA)®</a></li>
-                            <li><a class="dropdown-item" href="CISA.html">Certified Information Systems
-                                    Auditor(CISA)®</a>
-                            </li>
-                            <li><a class="dropdown-item" href="CISM.html">Certified Information Security
-                                    Manager(CISM)®</a>
-                            </li>
-                            <li><a class="dropdown-item" href="SixSigma.html">Six Sigma Certification®</a></li>
-                            <li><a class="dropdown-item" href="Scrum.html">Scrum Master Certification®</a></li>
+                            <li><a class="dropdown-item" href="/Certifications/CCM.html">Certified Construction
+                                    Manager(CCM)®</a></li>
+                            <li><a class="dropdown-item" href="/Certifications/CMA.html">Certified Management
+                                    Accountant(CMA)®</a></li>
+                            <li><a class="dropdown-item" href="/Certifications/CISA.html">Certified Information Systems
+                                    Auditor(CISA)®</a></li>
+                            <li><a class="dropdown-item" href="/Certifications/CISM.html">Certified Information Security
+                                    Manager(CISM)®</a></li>
+                            <li><a class="dropdown-item" href="/Certifications/SixSigma.html">Six Sigma
+                                    Certification®</a></li>
+                            <li><a class="dropdown-item" href="/Certifications/Scrum.html">Scrum Master
+                                    Certification®</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="certificationsDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             About PMI
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="certificationsDropdown">
-                            <li><a class="dropdown-item" href="/about.html">Our legacy</a></li>
-                            <li><a class="dropdown-item" href="/team.html">Our Team</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="about.html">Our legacy</a></li>
+                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
                         </ul>
-
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+
+
+
+                    <!-- Membership Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="membershipDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Membership
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="membershipDropdown">
+                            <li><a class="dropdown-item" href="/membership/benefits.html">Membership Overview</a></li>
+                            <li><a class="dropdown-item" href="/membership/join.html">Become a Member</a></li>
+                            <li><a class="dropdown-item" href="/membership/renew.html">Renew </a></li>
+                        </ul>
+                    </li>
+
+
+
+                    <!-- Volunteer Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="volunteerDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Volunteer
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="volunteerDropdown">
+                            <li><a class="dropdown-item" href="/volunteer/opportunities.html">Opportunities</a></li>
+                            <li><a class="dropdown-item" href="/volunteer/why-volunteer.html">Why Volunteer</a></li>
+                            <li><a class="dropdown-item" href="/volunteer/apply.html">Apply Now</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://exam.pmiindia.org/auth/login">Login</a></li>
                 </ul>
-
             </div>
         </div>
     </nav>
@@ -791,65 +854,84 @@
 
 
 
-    <footer class="py-5 px-3 px-md-5" id="footer-body">
-        <div class="container">
-            <div class="row text-white">
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <h3 class="icabs-footer-title">ABOUT US</h3>
-                    <p class="icabs-footer-text">
-                        PMI is a global organization that offers project management certifications, guidelines, and
-                        resources. It helps professionals manage projects effectively using standard practices like the
-                        PMBOK® Guide.
-
-                    </p>
+    <section id="footer-body">
+        <footer class="footer">
+            <div class="row gy-4">
+                <div class="col-sm-auto" style="min-width:140px;">
+                    <h5>Quick Links</h5>
+                    <a href="#">Report PDUs <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a><br />
+                    <a href="#">Online Courses</a><br />
+                    <a href="#">PMBOK® Guide</a><br />
+                    <a href="#">Webinars <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a><br />
+                    <a href="#">Events</a><br />
+                    <a href="#">Store</a>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <h3 class="icabs-footer-title">Certification®</h3>
-                    <ul class="icabs-footer-list p-0 m-0">
-                        <li><a href="#" style="text-decoration: none; color: inherit;">Project Management Professional
-                                (PMP)</a></li>
-                        <li><a href="#" style="text-decoration: none; color: inherit;">Program Management Professional
-                                (PgMP)</a></li>
-                        <li><a href="#" style="text-decoration: none; color: inherit;">Master Project Manager (MPM)</a>
-                        </li>
-                        <li><a href="#" style="text-decoration: none; color: inherit;">Certified Construction Manager
-                                (CCM)</a></li>
-                        <li><a href="#" style="text-decoration: none; color: inherit;">OSHA Safety Certificate</a></li>
-                    </ul>
+                <div class="col-sm-auto" style="min-width:220px;">
+                    <h5>Certifications</h5>
+                    <p>Project Management Professional (PMP)®</p>
+                    <p>Certified Associate in Project Management (CAPM)®</p>
+                    <p>PMI Agile Certified Practitioner (PMI-ACP)®</p>
+                    <p>Compare Certifications</p>
                 </div>
-
-
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <h3 class="icabs-footer-title">LOCATION</h3>
-                    <ul class="icabs-contact-list p-0 m-0">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            105 WeWork, 1st Floor, Oberoi Commerz II, International Business Park,
-                            Oberoi Garden City, Off Western Express Highway, Goregaon East,
-                            Mumbai, 400063. Maharashtra, India
-                        </li>
-                    </ul>
-
+                <div class="col-sm-auto" style="min-width:140px;">
+                    <h5>Membership</h5>
+                    <a href="#">Become a Member</a><br />
+                    <a href="#">Local Chapters</a><br />
+                    <a href="#">Membership FAQs</a>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <h3 class="icabs-footer-title">CONTACT US</h3>
-                    <ul class="icabs-contact-list p-0 m-0">
-                        <li>
-                            <i class="fas fa-phone-alt"></i> +91-<strong>8035210109</strong>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:contact@pmiindia.org"
-                                style="color: white; text-decoration: none;">contact@pmiindia.org</a>
-                        </li>
-                    </ul>
+                <div class="col-sm-auto" style="min-width:220px;">
+                    <h5>Community</h5>
+                    <a href="#">Latest from the Community <i class="fas fa-external-link-alt"
+                            style="font-size:10px;"></i></a><br />
+                    <a href="#">Discussions <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a><br />
+                    <a href="#">Templates <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a><br />
+                    <a href="#">Blogs <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a><br />
+                    <a href="#">Volunteering</a>
+                    <div class="partner-title">Partner with PMI</div>
+                    <a href="#">Enterprise and Commercial Partners</a><br />
+                    <a href="#">Training Partners</a>
                 </div>
+                <div class="col-sm-auto" style="min-width:160px;">
+                    <h5>Organization</h5>
+                    <a href="#">Our Mission &amp; Vision</a><br />
+                    <a href="#">Our Purpose</a><br />
+                    <a href="#">Our Leadership</a><br />
+                    <a href="#">The PMI Blog</a><br />
+                    <a href="#">What is Project Management?</a><br />
+                    <a href="#">Who are Project Managers?</a><br />
+                    <a href="#">Press &amp; Media</a><br />
+                    <a href="#">Careers</a>
+                </div>
+                <div class="col-sm-auto d-flex flex-column" style="min-width:180px;">
+                    <h5>Support</h5>
+                    <a href="#">Contact Us</a>
+                    <a href="#" class="mb-3">Store Help</a>
+                    <img src="/images/PMI logo.png"
+                        alt="Project Management Institute logo with colorful blocks and text" width="120" height="40"
+                        class="mb-3" />
+                    <hr />
 
-
-
+                    <h5>Stay Connected</h5>
+                    <div class="social-icons d-flex">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+            <nav class="d-flex flex-wrap gap-3 mt-4" style="font-size:10px;">
+                <a href="#" class="text-decoration-none text-reset">Privacy</a>
+                <a href="#" class="text-decoration-none text-reset">Sitemap</a>
+                <a href="#" class="text-decoration-none text-reset">Terms of use</a>
+                <a href="#" class="text-decoration-none text-reset">Purchasing Terms</a>
+                <a href="#" class="text-decoration-none text-reset">Advertising &amp; Sponsorship</a>
+            </nav>
+            <small class="d-block mt-2" style="font-size:10px;">© 2025 Project Management Institute, Inc.</small>
+        </footer>
+    </section>
 
     <!-- Feedback tab on left side -->
 
