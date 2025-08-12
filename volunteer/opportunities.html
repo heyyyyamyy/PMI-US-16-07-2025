@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Membership | Project Management Institute.</title>
+    <title>Volunteer | Project Management Institute.</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet" />
@@ -133,89 +133,154 @@
         Nav bar
         */
 
-        .membership-header {
-            background-color: #1491a3;
-            padding: 1.5rem 2rem;
+        .volunterr-body {
+            background-color: #1899aa;
             color: white;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+
         }
 
-        .membership-header p.chapter {
-            margin-bottom: 0.25rem;
-            font-size: 1rem;
-            font-weight: 400;
+        .volunteer {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            max-width: 960px;
+            margin-left: 8rem;
+            /* increased left spacing */
+            margin-right: auto;
         }
 
-        .membership-header h1 {
+        .volunteer__title {
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.875rem;
+            /* 30px */
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .volunteer__subtitle {
+            font-weight: 400;
+            font-size: 1rem;
             margin-bottom: 0.5rem;
         }
 
-        .membership-header p.breadcrumb {
-            font-weight: 600;
-            font-size: 0.75rem;
-            margin-bottom: 0;
+        .volunteer__description {
+            font-weight: 400;
+            font-size: 0.875rem;
+            /* 14px */
+            max-width: 600px;
+            margin-bottom: 2rem;
         }
 
-        .membership-header p.breadcrumb span {
+        .volunteer__breadcrumb {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .volunteer__breadcrumb span {
             font-weight: 400;
         }
 
-
-        .membership-persons {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        @media (max-width: 992px) {
-            .membership-persons {
-                grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 768px) {
+            .volunteer {
+                margin-left: 3rem;
+                margin-right: 1.5rem;
             }
         }
 
         @media (max-width: 576px) {
-            .membership-persons {
-                grid-template-columns: 1fr;
+            .volunteer {
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
             }
         }
 
-        .membership-persons .card {
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
-            border: none;
-            text-align: center;
-            padding: 1rem;
+        .volunteer-benefits {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+                "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            color: #1f2937;
+            /* Tailwind's gray-900 */
+            background-color: #fff;
         }
 
-        .membership-persons .card img {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            background-color: #e6e9eb;
-            object-fit: cover;
-            margin: 0 auto;
-            display: block;
+        .volunteer-benefits h2 {
+            font-weight: 400;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
         }
 
-        .membership-persons .card-title {
+        .volunteer-benefits h2 .highlight {
+            color: #f97316;
+            /* Tailwind's orange-600 */
+        }
+
+        .volunteer-benefits p {
             font-size: 0.875rem;
+            line-height: 1.625;
+            margin-bottom: 1.5rem;
+            color: #374151;
+            /* Tailwind's gray-700 */
+        }
+
+        .volunteer-benefits .icon {
+            font-size: 1.5rem;
+            color: #000;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .volunteer-benefits .section-bg {
+            background-color: #acbad6;
+            /* Tailwind's gray-100 */
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+            color: #6b7280;
+            /* Tailwind's gray-500 */
+        }
+
+        .volunteer-benefits .section-bg h3 {
             font-weight: 600;
             color: #1f2937;
-            margin-top: 0.75rem;
+            /* Tailwind's gray-900 */
+            font-size: 1rem;
             margin-bottom: 0.25rem;
         }
 
-        .membership-persons .card-text {
-            font-size: 0.75rem;
-            color: #9ca3af;
-            line-height: 1.2;
+        .volunteer-benefits .section-bg p {
+            font-size: 0.875rem;
+            line-height: 1.625;
             margin-bottom: 0;
-            white-space: pre-line;
         }
 
+        .video-wrapper {
+            position: relative;
+            max-width: 720px;
+            /* increased from 600px */
+            border-radius: 0.25rem;
+            overflow: hidden;
+        }
+
+        .video-wrapper img {
+            width: 100%;
+            display: block;
+            border-radius: 0.25rem;
+        }
+
+        .video-wrapper .play-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 0.25rem;
+        }
+
+        .video-wrapper .play-overlay i {
+            color: #fff;
+            font-size: 4rem;
+        }
 
 
         /* footer */
@@ -416,126 +481,42 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="volunteerDropdown">
                             <li><a class="dropdown-item" href="/volunteer/opportunities.html">Opportunities</a></li>
-                            <li><a class="dropdown-item" href="/volunteer/benifits.html">Benefitsr</a></li>
+                            <li><a class="dropdown-item" href="/volunteer/benefits.html">Benefits</a></li>
 
                         </ul>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.htmlgit add .">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://exam.pmiindia.org/auth/login">Login</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="membership-header text-white">
-        <div class="container">
 
-            <div class="h1">New Members </div>
-            <div class="breadcrumb">Home <span>»</span> New Members</div>
-        </div>
-    </div>
 
-    <div class="membership-persons py-5">
-        <div class="card">
-            <img alt="Silhouette of a male person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/177e58ef-a107-4449-5784-ff0428c2b657.jpg" />
-            <div class="card-title">Mr.Nitin Sharma</div>
-            <div class="card-text">Manager - PMO, Analytics
-                Department L&amp;T Financial Services</div>
+    <section class="volunterr-body">
+
+        <div class="volunteer">
+
+            <h1 class="volunteer__title">
+                Get Involved.<br />
+                Make a difference.<br />
+                Be a volunteer.
+            </h1>
+            <p class="volunteer__description">
+                If you work on agile teams or if your organization is adopting agile
+                practices, the PMI-ACP is a good choice for you. The PMI-ACP is evidence
+                of your real-world, hands-on experience and skill as part of an agile
+                team.
+            </p>
+            <p class="volunteer__breadcrumb">
+                Home <span>»</span> Benefits of Volunteering
+            </p>
         </div>
-        <div class="card">
-            <img alt="Silhouette of a male person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/177e58ef-a107-4449-5784-ff0428c2b657.jpg" />
-            <div class="card-title">Mr. Ayan Kumar Datta</div>
-            <div class="card-text">PMP</div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a male person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/177e58ef-a107-4449-5784-ff0428c2b657.jpg" />
-            <div class="card-title">Mr. Dharmendra Patra</div>
-            <div class="card-text">PMP, PMI-ACP</div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a male person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/177e58ef-a107-4449-5784-ff0428c2b657.jpg" />
-            <div class="card-title">Mr. Angsuman Banerjee</div>
-            <div class="card-text">PMP</div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a male person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/177e58ef-a107-4449-5784-ff0428c2b657.jpg" />
-            <div class="card-title">Mr. Shashwata Das</div>
-            <div class="card-text">Manager - PMO, Analytics
-                Department L&amp;T Financial Services</div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a male person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/177e58ef-a107-4449-5784-ff0428c2b657.jpg" />
-            <div class="card-title">Mr. Riddhiman Bhattacharyya</div>
-            <div class="card-text">PMP</div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a male person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/177e58ef-a107-4449-5784-ff0428c2b657.jpg" />
-            <div class="card-title">Mr. Dipayan Sarkar</div>
-            <div class="card-text"></div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a male person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/177e58ef-a107-4449-5784-ff0428c2b657.jpg" />
-            <div class="card-title">Mr. Dharmendu Mandal</div>
-            <div class="card-text"></div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a female person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/5b244856-17c6-4b55-856a-4f1cb9397509.jpg" />
-            <div class="card-title">Ms. Anjali Roy</div>
-            <div class="card-text">Senior Analyst</div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a male person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/5b244856-17c6-4b55-856a-4f1cb9397509.jpg" />
-            <div class="card-title">Mr. Rajesh Kumar</div>
-            <div class="card-text">Project Coordinator</div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a female person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/177e58ef-a107-4449-5784-ff0428c2b657.jpg" />
-            <div class="card-title">Ms. Priya Sen</div>
-            <div class="card-text">PMP</div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a male person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/177e58ef-a107-4449-5784-ff0428c2b657.jpg" />
-            <div class="card-title">Mr. Suresh Patil</div>
-            <div class="card-text">QA Lead</div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a male person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/177e58ef-a107-4449-5784-ff0428c2b657.jpg" />
-            <div class="card-title">Mr. Amitabh Das</div>
-            <div class="card-text">Scrum Master</div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a female person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/5b244856-17c6-4b55-856a-4f1cb9397509.jpg" />
-            <div class="card-title">Ms. Kavita Sharma</div>
-            <div class="card-text">Business Analyst</div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a male person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/177e58ef-a107-4449-5784-ff0428c2b657.jpg" />
-            <div class="card-title">Mr. Manoj Verma</div>
-            <div class="card-text">Technical Lead</div>
-        </div>
-        <div class="card">
-            <img alt="Silhouette of a female person with dark blue color on light gray circular background"
-                src="https://storage.googleapis.com/a1aa/image/5b244856-17c6-4b55-856a-4f1cb9397509.jpg" />
-            <div class="card-title">Ms. Rina Das</div>
-            <div class="card-text">UX Designer</div>
-        </div>
-    </div>
+    </section>
+
+
 
 
 
