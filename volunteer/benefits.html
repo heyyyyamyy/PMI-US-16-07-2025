@@ -195,137 +195,71 @@
             }
         }
 
-        .volunteer-benefits {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-                "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            color: #1f2937;
-            /* Tailwind's gray-900 */
-            background-color: #fff;
+
+        .volunteer-body {
+            font-family: "Open Sans", sans-serif;
         }
 
-        .volunteer-benefits h2 {
+        .volunteer h2 {
             font-weight: 400;
             font-size: 1.25rem;
-            margin-bottom: 1rem;
         }
 
-        .volunteer-benefits h2 .highlight {
+        .volunteer h2 .highlight {
             color: #f97316;
-            /* Tailwind's orange-600 */
+            /* orange-500 */
         }
 
-        .volunteer-benefits p {
-            font-size: 0.875rem;
-            line-height: 1.625;
-            margin-bottom: 1.5rem;
-            color: #374151;
-            /* Tailwind's gray-700 */
+        .volunteer p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #1f2937;
+            /* gray-900 */
         }
 
-        .volunteer-benefits .icon {
+        .volunteer .icon {
             font-size: 1.5rem;
             color: #000;
-            margin-top: 0.25rem;
-            flex-shrink: 0;
+            margin-top: 0.2rem;
         }
 
-        .volunteer-benefits .section-bg {
-            background-color: #acbad6;
-            /* Tailwind's gray-100 */
-            padding-top: 2.5rem;
-            padding-bottom: 2.5rem;
+        .volunteer .card-text {
             color: #6b7280;
-            /* Tailwind's gray-500 */
+            /* gray-500 */
+            font-size: 0.9rem;
         }
 
-        .volunteer-benefits .section-bg h3 {
-            font-weight: 600;
-            color: #1f2937;
-            /* Tailwind's gray-900 */
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
+        .volunteer .section-light {
+            background-color: #f3f4f6;
+            /* gray-100 */
+            padding-top: 2rem;
+            padding-bottom: 2rem;
         }
 
-        .volunteer-benefits .section-bg p {
-            font-size: 0.875rem;
-            line-height: 1.625;
-            margin-bottom: 0;
-        }
-
-        .video-wrapper {
-            position: relative;
-            max-width: 720px;
-            /* increased from 600px */
-            border-radius: 0.25rem;
-            overflow: hidden;
-        }
-
-        .video-wrapper img {
-            width: 100%;
-            display: block;
-            border-radius: 0.25rem;
-        }
-
-        .video-wrapper .play-overlay {
+        .volunteer .play-btn {
             position: absolute;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            border-radius: 0.25rem;
-        }
-
-        .video-wrapper .play-overlay i {
-            color: #fff;
-            font-size: 4rem;
-        }
-
-        .StarVolunteer .orange-text {
-            color: #f97316;
-        }
-
-        .StarVolunteer .card-title.orange-text {
-            color: #a0522d;
-        }
-
-        .StarVolunteer .fw-semibold {
-            font-weight: 600;
-        }
-
-        .StarVolunteer .text-secondary {
-            color: #6b7280 !important;
-        }
-
-        .StarVolunteer .text-muted {
-            color: #6b7280 !important;
-        }
-
-        .StarVolunteer .small {
-            font-size: 0.875em;
-        }
-
-        .StarVolunteer .card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .StarVolunteer .card-img-top {
-            object-fit: cover;
-            aspect-ratio: 1 / 1;
-            height: auto;
-        }
-
-        .StarVolunteer .card-body {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255 255 255 / 0.9);
+            border-radius: 50%;
             padding: 1rem;
-            text-align: center;
+            box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
+
+        .volunteer .play-btn:hover {
+            background: rgba(255 255 255 / 1);
+        }
+
+        .volunteer .play-btn i {
+            color: #374151;
+            /* gray-700 */
+            font-size: 1.875rem;
+        }
+
 
         /* footer */
         .footer {
@@ -555,7 +489,7 @@
                 team.
             </p>
             <p class="volunteer__breadcrumb">
-                Home <span>»</span> Volunteer Opportunities
+                Home <span>»</span> Benefits of Volunteering
             </p>
         </div>
     </section>
@@ -564,79 +498,91 @@
     </section>
 
 
-    <div class="container py-5 StarVolunteer">
-        <div class="mb-3 fw-semibold" style="color:#374151;">
-            <div>
-                <h1>Our</h1>
-            </div>
-            <div class="orange-text">
-                Star Volunteer of 2024
-            </div>
-        </div>
-        <div class="mb-5 text-secondary" style="max-width: 600px;">
-            Below are the current volunteering opportunities available within the PMI. Click on the title bar
-            of each opportunity for more information.
-        </div>
-        <div class="row g-4">
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="card rounded-3 shadow-sm">
-                    <img alt="Man in gray blazer and black shirt standing against a plain light background"
-                        class="card-img-top" src="/images/V1pic.avif" />
-                    <div class="card-body text-center">
-                        <div class="card-title text-secondary fw-semibold">
-                            Mr. Rajesh Kumar
-                        </div>
-                        <div class="card-text text-muted small mb-0">
-                            June 2023
-                        </div>
-                    </div>
+    <section class="container volunteer-body">
+        <div class="volunteer container py-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="mb-4">
+                        The Benefits of
+                        <span class="highlight">
+                            Volunteering
+                        </span>
+                    </h2>
+                    <p class="mb-4">
+                        Volunteering is a great way to meet enthusiastic fellow project professionals and give something
+                        back to to the project management profession. Experience volunteering for yourself by joining
+                        our team of PMI UK volunteers. In the video on the left, our previous Director of Volunteering
+                        Nigel Smith introduces the benefits of volunteering with the chapter.
+                    </p>
+                    <p>
+                        Below are the current volunteering opportunities available within the PMI UK Chapter. Click on
+                        the title bar of each opportunity for more information.
+                    </p>
                 </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="card rounded-3 shadow-sm">
-                    <img alt="Woman in black sleeveless top sitting on a brown chair with a table and artwork in background"
-                        class="card-img-top" src="/images/V2pic.avif" />
-                    <div class="card-body text-center">
-                        <div class="card-title orange-text fw-semibold">
-                            Ms. Anjali Mehta
-                        </div>
-                        <div class="card-text text-muted small mb-0">
-                            August 2023
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="card rounded-3 shadow-sm">
-                    <img alt="Man with glasses wearing a red polo shirt standing in front of a dark textured wall"
-                        class="card-img-top" src="/images/V3pic.jpg" />
-                    <div class="card-body text-center">
-                        <div class="card-title text-secondary fw-semibold">
-                            Mr. Suresh Patel
-                        </div>
-                        <div class="card-text text-muted small mb-0">
-                            June 2023
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="card rounded-3 shadow-sm">
-                    <img alt="Man in black suit and glasses smiling against a white background" class="card-img-top"
-                        src="/images/V4pic.jpeg" />
-                    <div class="card-body text-center">
-                        <div class="card-title text-secondary fw-semibold">
-                            Mr. Arjun Singh
-                        </div>
-                        <div class="card-text text-muted small mb-0">
-                            June 2022
-                        </div>
-                    </div>
+                <div class="col-md-6 position-relative">
+                    <img alt="Group of people standing in office with blue and yellow wall background"
+                        class="img-fluid rounded"
+                        src="https://placehold.co/600x300/png?text=Group+of+people+standing+in+office+with+blue+and+yellow+wall+background" />
+                    <button aria-label="Play video" class="play-btn">
+                        <i class="fas fa-play">
+                        </i>
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
-
+        <section class="volunteer section-light">
+            <div class="container">
+                <div class="row text-dark">
+                    <div class="col-md-4 d-flex mb-4 mb-md-0">
+                        <div class="icon me-3">
+                            <i class="fas fa-sitemap">
+                            </i>
+                        </div>
+                        <div>
+                            <h5 class="fw-semibold">
+                                Build a Professional Network
+                            </h5>
+                            <p class="card-text mb-0">
+                                Enhance the profession of project management, reap the benefits of expanding
+                                connections, and leverage career advancement opportunities all while volunteering with
+                                PMI.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex mb-4 mb-md-0">
+                        <div class="icon me-3">
+                            <i class="fas fa-lightbulb">
+                            </i>
+                        </div>
+                        <div>
+                            <h5 class="fw-semibold">
+                                Gain Skills and Experiences
+                            </h5>
+                            <p class="card-text mb-0">
+                                Develop and sharpen vital new skills, including leadership, collaboration and
+                                team-building techniques.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex">
+                        <div class="icon me-3">
+                            <i class="fas fa-user-tie">
+                            </i>
+                        </div>
+                        <div>
+                            <h5 class="fw-semibold">
+                                Develop as a Leader
+                            </h5>
+                            <p class="card-text mb-0">
+                                Leverage opportunities to develop your personal leadership skills while making a
+                                difference in your profession, community, and life.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
 
 
     <section id="footer-body">
